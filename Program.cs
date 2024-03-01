@@ -15,6 +15,8 @@ namespace test2
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FilmForm());
+            // FilmRepo filmRepo = new();
+            // Console.WriteLine(filmRepo.GetById(2).ReleaseYear);
         }
     }
 }
