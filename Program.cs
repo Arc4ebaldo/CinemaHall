@@ -1,5 +1,6 @@
 using test2.Models;
 using test2.Repositories;
+using test2.View;
 
 namespace test2
 {
@@ -14,7 +15,7 @@ namespace test2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FilmForm());
+            Application.Run(new LoginForm());
         }
     }
 }
