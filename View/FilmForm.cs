@@ -1,68 +1,67 @@
 using System.Runtime.InteropServices;
+using test2.DTO;
 using test2.Models;
 using test2.Repositories;
+using test2.Services;
 using test2.View;
 
 namespace test2
 {
     public partial class FilmForm : Form
     {
-        private BaseDbContext db = new();
         public FilmForm()
         {
             InitializeComponent();
         }
 
-        private int id;
+        private FilmService filmService = new();
 
         private void Add_Click(object sender, EventArgs e)
         {
+            FilmDTO newFilm = new FilmDTO(
+                    Title.Text,
+                    Director.Text,
+                    Genre.Text,
+                    Duration.Text,
+                    ReleaseDate.Text,
+                    Description.Text
+                );
+            filmService.CreateFilm(newFilm);
+
+            AllFilms.DataSource = filmService.GetAllFilms();
 
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            Film film = db.Films.Where(f => f.FilmId == id).First();
-            db.Films.Remove(film);
-            db.SaveChanges();
+            filmService.DeleteFilmById(int.Parse(ID));
+            AllFilms.DataSource = filmService.GetAllFilms();
         }
+
+        private string ID;
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            Film film = db.Films.Where(f => f.FilmId == id).First();
-            db.Films.Update(film);
-            db.SaveChanges();
+            FilmDTO newFilm = new FilmDTO(
+                    ID,
+                    Title.Text,
+                    Director.Text,
+                    Genre.Text,
+                    Duration.Text,
+                    ReleaseDate.Text,
+                    Description.Text
+                );
+            filmService.UpdateFilm(newFilm);
+            AllFilms.DataSource = filmService.GetAllFilms();
         }
 
         private void FilmForm_Load(object sender, EventArgs e)
         {
-
+            AllFilms.DataSource = filmService.GetAllFilms();
+            Genre.DataSource = new List<string>() { "Боевик", "Комедия", "Ужасы", "Триллер", "Фантастика", "Драма", "Мультфильм" };
         }
 
 
-        private void AllFilms_MouseClick(object sender, MouseEventArgs e)
-        {
-            AllFilms.DataSource = db.Films.ToList();
-        }
-
-        private void AllFilms_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                id = int.Parse(AllFilms.SelectedCells[0].Value.ToString());
-                Title.Text = AllFilms.SelectedCells[1].Value.ToString();
-                Director.Text = AllFilms.SelectedCells[2].Value.ToString();
-                Genre.Text = AllFilms.SelectedCells[1].Value.ToString();
-                Title.Text = AllFilms.SelectedCells[1].Value.ToString();
-                Title.Text = AllFilms.SelectedCells[1].Value.ToString();
-                Title.Text = AllFilms.SelectedCells[1].Value.ToString();
-
-            }
-            catch (Exception)
-            {
-
-            }
-        }
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
@@ -138,5 +137,20 @@ namespace test2
             m.Show();
             this.Close();
         }
+
+
+        private void AllFilms_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllFilms.SelectedCells;
+            ID = selectedCells[0].Value.ToString();
+            Title.Text = selectedCells[1].Value.ToString();
+            Director.Text = selectedCells[2].Value.ToString();
+            Genre.Text = selectedCells[3].Value.ToString();
+            Duration.Text = selectedCells[4].Value.ToString();
+            ReleaseDate.Text = selectedCells[5].Value.ToString();
+            Description.Text = selectedCells[6].Value.ToString();
+        }
+
+     
     }
 }

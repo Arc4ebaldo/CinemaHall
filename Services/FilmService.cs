@@ -13,15 +13,15 @@ public class FilmService {
         this.Repo = new();
     }
 
-    public void CreateFilm(Film film) {
-        Repo.Create(film);
+    public void CreateFilm(FilmDTO film) {
+        Repo.Create(film.ToFilm());
     }
 
     public FilmDTO? GetFilmById(int id) {
         return new FilmDTO(Repo.GetById(id));
     }
 
-    public List<FilmDTO> GetAllFilms(int id) {
+    public List<FilmDTO> GetAllFilms() {
         List<FilmDTO> films = new();
         foreach (var film in Repo.GetAll())
         {

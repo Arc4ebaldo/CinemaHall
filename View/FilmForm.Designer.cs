@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Title = new TextBox();
             Description = new TextBox();
             Director = new TextBox();
@@ -56,12 +56,12 @@
             MovieBtn = new Button();
             image1 = new PictureBox();
             Save = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            ReleaseDate = new DateTimePicker();
             CloseBtn = new PictureBox();
             MinBtn = new PictureBox();
             MaxBtn = new PictureBox();
             VnizBtn = new PictureBox();
-            DataTime = new MaskedTextBox();
+            Duration = new MaskedTextBox();
             Genre = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)filmBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
@@ -226,48 +226,47 @@
             // 
             // AllFilms
             // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = SystemColors.Window;
-            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle9.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            AllFilms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            AllFilms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AllFilms.BackgroundColor = Color.White;
             AllFilms.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = SystemColors.Window;
-            dataGridViewCellStyle10.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle10.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle10.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            AllFilms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AllFilms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllFilms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle11.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle11.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            AllFilms.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllFilms.DefaultCellStyle = dataGridViewCellStyle3;
             AllFilms.GridColor = Color.FromArgb(15, 15, 15);
             AllFilms.Location = new Point(317, 130);
             AllFilms.Name = "AllFilms";
             AllFilms.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = SystemColors.Window;
-            dataGridViewCellStyle12.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            AllFilms.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            AllFilms.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             AllFilms.Size = new Size(1015, 457);
             AllFilms.TabIndex = 15;
-            AllFilms.SelectionChanged += AllFilms_SelectionChanged;
-            AllFilms.MouseClick += AllFilms_MouseClick;
+            AllFilms.RowHeaderMouseClick += AllFilms_RowHeaderMouseClick;
             // 
             // panel1
             // 
@@ -407,17 +406,17 @@
             Save.Text = "Сохранить";
             Save.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // ReleaseDate
             // 
-            dateTimePicker1.CalendarFont = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dateTimePicker1.CalendarForeColor = Color.FromArgb(15, 15, 15);
-            dateTimePicker1.CalendarTitleBackColor = Color.Khaki;
-            dateTimePicker1.Cursor = Cursors.Hand;
-            dateTimePicker1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dateTimePicker1.Location = new Point(1000, 75);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(158, 27);
-            dateTimePicker1.TabIndex = 18;
+            ReleaseDate.CalendarFont = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ReleaseDate.CalendarForeColor = Color.FromArgb(15, 15, 15);
+            ReleaseDate.CalendarTitleBackColor = Color.Khaki;
+            ReleaseDate.Cursor = Cursors.Hand;
+            ReleaseDate.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ReleaseDate.Location = new Point(1000, 75);
+            ReleaseDate.Name = "ReleaseDate";
+            ReleaseDate.Size = new Size(158, 27);
+            ReleaseDate.TabIndex = 4;
             // 
             // CloseBtn
             // 
@@ -471,16 +470,16 @@
             VnizBtn.TabStop = false;
             VnizBtn.Click += VnizBtn_Click;
             // 
-            // DataTime
+            // Duration
             // 
-            DataTime.Cursor = Cursors.IBeam;
-            DataTime.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            DataTime.Location = new Point(813, 75);
-            DataTime.Mask = "00:00";
-            DataTime.Name = "DataTime";
-            DataTime.Size = new Size(147, 27);
-            DataTime.TabIndex = 23;
-            DataTime.ValidatingType = typeof(DateTime);
+            Duration.Cursor = Cursors.IBeam;
+            Duration.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Duration.Location = new Point(813, 75);
+            Duration.Mask = "00:00";
+            Duration.Name = "Duration";
+            Duration.Size = new Size(147, 27);
+            Duration.TabIndex = 3;
+            Duration.ValidatingType = typeof(DateTime);
             // 
             // Genre
             // 
@@ -488,7 +487,7 @@
             Genre.Location = new Point(650, 78);
             Genre.Name = "Genre";
             Genre.Size = new Size(121, 23);
-            Genre.TabIndex = 24;
+            Genre.TabIndex = 2;
             // 
             // FilmForm
             // 
@@ -497,12 +496,12 @@
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
             Controls.Add(Genre);
-            Controls.Add(DataTime);
+            Controls.Add(Duration);
             Controls.Add(VnizBtn);
             Controls.Add(MaxBtn);
             Controls.Add(MinBtn);
             Controls.Add(CloseBtn);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(ReleaseDate);
             Controls.Add(Save);
             Controls.Add(panel1);
             Controls.Add(AllFilms);
@@ -560,12 +559,12 @@
         private Button BiletBtn;
         private Button ZalBtn;
         private Button SeansBtn;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker ReleaseDate;
         private PictureBox CloseBtn;
         private PictureBox MinBtn;
         private PictureBox MaxBtn;
         private PictureBox VnizBtn;
-        private MaskedTextBox DataTime;
+        private MaskedTextBox Duration;
         private ComboBox Genre;
     }
 }

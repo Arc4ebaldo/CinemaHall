@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test2.Services;
 
 namespace test2.View
 {
@@ -18,9 +19,11 @@ namespace test2.View
             InitializeComponent();
         }
 
+        private HallService hallService = new();
+
         private void ZalForm_Load(object sender, EventArgs e)
         {
-
+            AllHall.DataSource = hallService.GetAllHalls();
         }
 
 
@@ -97,6 +100,11 @@ namespace test2.View
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

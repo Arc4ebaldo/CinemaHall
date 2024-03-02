@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             TransBtn = new Button();
             image1 = new PictureBox();
@@ -45,21 +45,21 @@
             MinBtn = new PictureBox();
             CloseBtn = new PictureBox();
             Save = new Button();
-            AllFilms = new DataGridView();
-            Название = new Label();
+            AllHall = new DataGridView();
+            label1 = new Label();
             Edit = new Button();
             Delete = new Button();
             Add = new Button();
-            capacity = new TextBox();
             label2 = new Label();
-            Nazvanie = new TextBox();
+            HallName = new TextBox();
+            Capasity = new MaskedTextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MaxBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AllHall).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -254,59 +254,59 @@
             Save.Text = "Сохранить";
             Save.UseVisualStyleBackColor = false;
             // 
-            // AllFilms
+            // AllHall
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            AllFilms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            AllFilms.BackgroundColor = Color.White;
-            AllFilms.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            AllFilms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            AllFilms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle3.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            AllFilms.DefaultCellStyle = dataGridViewCellStyle3;
-            AllFilms.GridColor = Color.FromArgb(15, 15, 15);
-            AllFilms.Location = new Point(298, 136);
-            AllFilms.Name = "AllFilms";
-            AllFilms.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            AllFilms.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            AllFilms.Size = new Size(1015, 457);
-            AllFilms.TabIndex = 55;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle5.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            AllHall.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            AllHall.BackgroundColor = Color.White;
+            AllHall.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle6.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            AllHall.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            AllHall.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle7.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            AllHall.DefaultCellStyle = dataGridViewCellStyle7;
+            AllHall.GridColor = Color.FromArgb(15, 15, 15);
+            AllHall.Location = new Point(298, 136);
+            AllHall.Name = "AllHall";
+            AllHall.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            AllHall.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            AllHall.Size = new Size(1015, 457);
+            AllHall.TabIndex = 55;
             // 
-            // Название
+            // label1
             // 
-            Название.AutoSize = true;
-            Название.Font = new Font("Century Gothic", 12F);
-            Название.ForeColor = Color.DimGray;
-            Название.Location = new Point(298, 37);
-            Название.Name = "Название";
-            Название.Size = new Size(180, 21);
-            Название.TabIndex = 51;
-            Название.Text = "Дата и время начала";
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(298, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(87, 21);
+            label1.TabIndex = 51;
+            label1.Text = "Название";
             // 
             // Edit
             // 
@@ -355,16 +355,7 @@
             Add.TabIndex = 48;
             Add.Text = "Добавить";
             Add.UseVisualStyleBackColor = false;
-            // 
-            // capacity
-            // 
-            capacity.BorderStyle = BorderStyle.None;
-            capacity.Cursor = Cursors.IBeam;
-            capacity.Font = new Font("Century Gothic", 12F);
-            capacity.Location = new Point(660, 91);
-            capacity.Name = "capacity";
-            capacity.Size = new Size(122, 20);
-            capacity.TabIndex = 47;
+            Add.Click += Add_Click;
             // 
             // label2
             // 
@@ -377,15 +368,24 @@
             label2.TabIndex = 52;
             label2.Text = "Вместимость";
             // 
-            // Nazvanie
+            // HallName
             // 
-            Nazvanie.BorderStyle = BorderStyle.None;
-            Nazvanie.Cursor = Cursors.IBeam;
-            Nazvanie.Font = new Font("Century Gothic", 12F);
-            Nazvanie.Location = new Point(298, 91);
-            Nazvanie.Name = "Nazvanie";
-            Nazvanie.Size = new Size(122, 20);
-            Nazvanie.TabIndex = 63;
+            HallName.BorderStyle = BorderStyle.None;
+            HallName.Cursor = Cursors.IBeam;
+            HallName.Font = new Font("Century Gothic", 12F);
+            HallName.Location = new Point(298, 91);
+            HallName.Name = "HallName";
+            HallName.Size = new Size(141, 20);
+            HallName.TabIndex = 1;
+            // 
+            // Capasity
+            // 
+            Capasity.Location = new Point(660, 88);
+            Capasity.Mask = "00000";
+            Capasity.Name = "Capasity";
+            Capasity.Size = new Size(135, 23);
+            Capasity.TabIndex = 61;
+            Capasity.ValidatingType = typeof(int);
             // 
             // ZalForm
             // 
@@ -393,19 +393,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Nazvanie);
+            Controls.Add(Capasity);
+            Controls.Add(HallName);
             Controls.Add(VnizBtn);
             Controls.Add(MaxBtn);
             Controls.Add(MinBtn);
             Controls.Add(CloseBtn);
             Controls.Add(Save);
-            Controls.Add(AllFilms);
+            Controls.Add(AllHall);
             Controls.Add(label2);
-            Controls.Add(Название);
+            Controls.Add(label1);
             Controls.Add(Edit);
             Controls.Add(Delete);
             Controls.Add(Add);
-            Controls.Add(capacity);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ZalForm";
@@ -418,7 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)MaxBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)AllFilms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AllHall).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -431,14 +431,12 @@
         private PictureBox MinBtn;
         private PictureBox CloseBtn;
         private Button Save;
-        private DataGridView AllFilms;
-        private Label Название;
+        private DataGridView AllHall;
+        private Label label1;
         private Button Edit;
         private Button Delete;
         private Button Add;
-        private TextBox capacity;
         private Label label2;
-        private TextBox Nazvanie;
         private Button TransBtn;
         private PictureBox image1;
         private Button SotrudBtn;
@@ -446,5 +444,7 @@
         private Button BiletBtn;
         private Button SeansBtn;
         private Button ZalBtn;
+        private TextBox HallName;
+        private MaskedTextBox Capasity;
     }
 }

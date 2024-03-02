@@ -27,7 +27,7 @@ public class SeansService {
         return seanses;
     }
 
-    public void Update (SeansDTO updatedSeans) {
+    public void UpdateSeans (SeansDTO updatedSeans) {
         Repo.Update(updatedSeans.ToSeans());
     }
 

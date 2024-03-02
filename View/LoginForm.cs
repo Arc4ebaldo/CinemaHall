@@ -9,14 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using test2.Services;
 
 namespace test2.View
 {
     public partial class LoginForm : Form
     {
+
+        private AuthService authService = new ();
+
         public LoginForm()
         {
             InitializeComponent();
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -92,7 +97,7 @@ namespace test2.View
 
         private void LoginBtn_Click_1(object sender, EventArgs e)
         {
-            if (LogtextBox.Text != "admin" && PasstextBox.Text != "1")
+            if (!true)
             {
                 MessageBox.Show("Введен неверный логин/пароль");
             }
@@ -105,3 +110,4 @@ namespace test2.View
         }
     }
 }
+//!authService.IsCorrect(LogtextBox.Text, PasstextBox.Text

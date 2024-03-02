@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test2.DTO;
+using test2.Services;
 
 namespace test2.View
 {
     public partial class SeansForm : Form
     {
+        private SeansService seansService = new();
+        private HallService hallService = new();
+        private string ID;
         public SeansForm()
         {
             InitializeComponent();
@@ -20,7 +26,8 @@ namespace test2.View
 
         private void SeansForm_Load(object sender, EventArgs e)
         {
-
+            AllSeans.DataSource = seansService.GetAllSeanses();
+            Hall.DataSource = hallService.GetAllHalls();
         }
 
         private void MovieBtn_Click(object sender, EventArgs e)
@@ -101,22 +108,49 @@ namespace test2.View
 
         private void Add_Click(object sender, EventArgs e)
         {
-
+            SeansDTO newSeans = new SeansDTO(
+                    StartDateTime.Text,
+                    Duration.Text,
+                    Hall.Text,
+                    FilmTitle.Text
+                );
+            seansService.CreateSeans(newSeans);
+            AllSeans.DataSource = seansService.GetAllSeanses();
         }
+
 
         private void Delete_Click(object sender, EventArgs e)
         {
-
+            seansService.DeleteSeansById(int.Parse(ID));
+            AllSeans.DataSource = seansService.GetAllSeanses();
         }
 
         private void Edit_Click(object sender, EventArgs e)
         {
-
+            SeansDTO newSeans = new SeansDTO(
+                    ID,
+                    StartDateTime.Text,
+                    Duration.Text,
+                    Hall.Text,
+                    FilmTitle.Text
+            );
+            seansService.UpdateSeans(newSeans);
+            AllSeans.DataSource = seansService.GetAllSeanses();
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AllSeans_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllSeans.SelectedCells;
+            ID = selectedCells[0].Value.ToString();
+            StartDateTime.Text = selectedCells[1].Value.ToString();
+            Duration.Text = selectedCells[2].Value.ToString();
+            Hall.Text = selectedCells[3].Value.ToString();
+            FilmTitle.Text = selectedCells[4].Value.ToString();
         }
     }
 }
