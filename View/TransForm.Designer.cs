@@ -40,28 +40,30 @@
             SeansBtn = new Button();
             MovieBtn = new Button();
             image1 = new PictureBox();
-            TipTrans = new ComboBox();
+            TipyTrans = new ComboBox();
             DataTime = new MaskedTextBox();
             VnizBtn = new PictureBox();
             MaxBtn = new PictureBox();
             MinBtn = new PictureBox();
             CloseBtn = new PictureBox();
             Save = new Button();
-            AllFilms = new DataGridView();
+            AllTrans = new DataGridView();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             Edit = new Button();
             Delete = new Button();
             Add = new Button();
-            Summa = new TextBox();
+            label4 = new Label();
+            Amount = new MaskedTextBox();
+            TransID = new MaskedTextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MaxBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AllTrans).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -187,23 +189,23 @@
             image1.TabIndex = 7;
             image1.TabStop = false;
             // 
-            // TipTrans
+            // TipyTrans
             // 
-            TipTrans.FormattingEnabled = true;
-            TipTrans.Location = new Point(544, 79);
-            TipTrans.Name = "TipTrans";
-            TipTrans.Size = new Size(121, 23);
-            TipTrans.TabIndex = 45;
+            TipyTrans.FormattingEnabled = true;
+            TipyTrans.Location = new Point(764, 83);
+            TipyTrans.Name = "TipyTrans";
+            TipyTrans.Size = new Size(121, 23);
+            TipyTrans.TabIndex = 2;
             // 
             // DataTime
             // 
             DataTime.Cursor = Cursors.IBeam;
             DataTime.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            DataTime.Location = new Point(312, 79);
+            DataTime.Location = new Point(551, 78);
             DataTime.Mask = "00/00/0000 90:00";
             DataTime.Name = "DataTime";
             DataTime.Size = new Size(147, 27);
-            DataTime.TabIndex = 44;
+            DataTime.TabIndex = 1;
             DataTime.ValidatingType = typeof(DateTime);
             // 
             // VnizBtn
@@ -274,7 +276,7 @@
             Save.Text = "Сохранить";
             Save.UseVisualStyleBackColor = false;
             // 
-            // AllFilms
+            // AllTrans
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
@@ -282,9 +284,9 @@
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
             dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            AllFilms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            AllFilms.BackgroundColor = Color.White;
-            AllFilms.BorderStyle = BorderStyle.None;
+            AllTrans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            AllTrans.BackgroundColor = Color.White;
+            AllTrans.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -292,8 +294,8 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(15, 15, 15);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            AllFilms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            AllFilms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllTrans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            AllTrans.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -301,11 +303,11 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(15, 15, 15);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            AllFilms.DefaultCellStyle = dataGridViewCellStyle3;
-            AllFilms.GridColor = Color.FromArgb(15, 15, 15);
-            AllFilms.Location = new Point(312, 134);
-            AllFilms.Name = "AllFilms";
-            AllFilms.ReadOnly = true;
+            AllTrans.DefaultCellStyle = dataGridViewCellStyle3;
+            AllTrans.GridColor = Color.FromArgb(15, 15, 15);
+            AllTrans.Location = new Point(312, 134);
+            AllTrans.Name = "AllTrans";
+            AllTrans.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Window;
             dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -313,16 +315,17 @@
             dataGridViewCellStyle4.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(15, 15, 15);
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            AllFilms.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            AllFilms.Size = new Size(1015, 457);
-            AllFilms.TabIndex = 37;
+            AllTrans.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            AllTrans.Size = new Size(1015, 457);
+            AllTrans.TabIndex = 37;
+            AllTrans.RowHeaderMouseClick += AllTrans_RowHeaderMouseClick;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(758, 35);
+            label3.Location = new Point(967, 35);
             label3.Name = "label3";
             label3.Size = new Size(70, 21);
             label3.TabIndex = 33;
@@ -333,7 +336,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F);
             label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(544, 35);
+            label2.Location = new Point(764, 35);
             label2.Name = "label2";
             label2.Size = new Size(136, 21);
             label2.TabIndex = 32;
@@ -344,7 +347,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(312, 35);
+            label1.Location = new Point(551, 35);
             label1.Name = "label1";
             label1.Size = new Size(117, 21);
             label1.TabIndex = 31;
@@ -365,6 +368,7 @@
             Edit.TabIndex = 30;
             Edit.Text = "Изменить";
             Edit.UseVisualStyleBackColor = false;
+            Edit.Click += Edit_Click;
             // 
             // Delete
             // 
@@ -381,6 +385,7 @@
             Delete.TabIndex = 29;
             Delete.Text = "Удалить";
             Delete.UseVisualStyleBackColor = false;
+            Delete.Click += Delete_Click;
             // 
             // Add
             // 
@@ -397,16 +402,36 @@
             Add.TabIndex = 28;
             Add.Text = "Добавить";
             Add.UseVisualStyleBackColor = false;
+            Add.Click += Add_Click;
             // 
-            // Summa
+            // label4
             // 
-            Summa.BorderStyle = BorderStyle.None;
-            Summa.Cursor = Cursors.IBeam;
-            Summa.Font = new Font("Century Gothic", 12F);
-            Summa.Location = new Point(740, 82);
-            Summa.Name = "Summa";
-            Summa.Size = new Size(122, 20);
-            Summa.TabIndex = 26;
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 12F);
+            label4.ForeColor = Color.DimGray;
+            label4.Location = new Point(328, 35);
+            label4.Name = "label4";
+            label4.Size = new Size(164, 21);
+            label4.TabIndex = 46;
+            label4.Text = "Номер транзакции";
+            // 
+            // Amount
+            // 
+            Amount.Location = new Point(967, 83);
+            Amount.Mask = "00000";
+            Amount.Name = "Amount";
+            Amount.Size = new Size(100, 23);
+            Amount.TabIndex = 3;
+            Amount.ValidatingType = typeof(int);
+            // 
+            // TransID
+            // 
+            TransID.Location = new Point(329, 83);
+            TransID.Mask = "00000";
+            TransID.Name = "TransID";
+            TransID.Size = new Size(100, 23);
+            TransID.TabIndex = 0;
+            TransID.ValidatingType = typeof(int);
             // 
             // TransForm
             // 
@@ -414,21 +439,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(TipTrans);
+            Controls.Add(TransID);
+            Controls.Add(Amount);
+            Controls.Add(label4);
+            Controls.Add(TipyTrans);
             Controls.Add(DataTime);
             Controls.Add(VnizBtn);
             Controls.Add(MaxBtn);
             Controls.Add(MinBtn);
             Controls.Add(CloseBtn);
             Controls.Add(Save);
-            Controls.Add(AllFilms);
+            Controls.Add(AllTrans);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(Edit);
             Controls.Add(Delete);
             Controls.Add(Add);
-            Controls.Add(Summa);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TransForm";
@@ -441,7 +468,7 @@
             ((System.ComponentModel.ISupportInitialize)MaxBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)AllFilms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AllTrans).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -449,21 +476,20 @@
         #endregion
 
         private Panel panel1;
-        private ComboBox TipTrans;
+        private ComboBox TipyTrans;
         private MaskedTextBox DataTime;
         private PictureBox VnizBtn;
         private PictureBox MaxBtn;
         private PictureBox MinBtn;
         private PictureBox CloseBtn;
         private Button Save;
-        private DataGridView AllFilms;
+        private DataGridView AllTrans;
         private Label label3;
         private Label label2;
         private Label label1;
         private Button Edit;
         private Button Delete;
         private Button Add;
-        private TextBox Summa;
         private Button TransBtn;
         private Button SotrudBtn;
         private Button BiletBtn;
@@ -471,5 +497,8 @@
         private Button SeansBtn;
         private Button MovieBtn;
         private PictureBox image1;
+        private Label label4;
+        private MaskedTextBox Amount;
+        private MaskedTextBox TransID;
     }
 }

@@ -27,7 +27,12 @@ namespace test2.View
         private void SeansForm_Load(object sender, EventArgs e)
         {
             AllSeans.DataSource = seansService.GetAllSeanses();
-            Hall.DataSource = hallService.GetAllHalls();
+            List<string> hallNames = new();
+            foreach (HallDTO name in hallService.GetAllHalls())
+            {
+                hallNames.Add(name.Name);
+            }
+            HallList.DataSource = hallNames;
         }
 
         private void MovieBtn_Click(object sender, EventArgs e)
@@ -108,10 +113,11 @@ namespace test2.View
 
         private void Add_Click(object sender, EventArgs e)
         {
+            
             SeansDTO newSeans = new SeansDTO(
                     StartDateTime.Text,
                     Duration.Text,
-                    Hall.Text,
+                    HallList.Text,
                     FilmTitle.Text
                 );
             seansService.CreateSeans(newSeans);
@@ -131,7 +137,7 @@ namespace test2.View
                     ID,
                     StartDateTime.Text,
                     Duration.Text,
-                    Hall.Text,
+                    HallList.Text,
                     FilmTitle.Text
             );
             seansService.UpdateSeans(newSeans);
@@ -149,7 +155,7 @@ namespace test2.View
             ID = selectedCells[0].Value.ToString();
             StartDateTime.Text = selectedCells[1].Value.ToString();
             Duration.Text = selectedCells[2].Value.ToString();
-            Hall.Text = selectedCells[3].Value.ToString();
+            HallList.Text = selectedCells[3].Value.ToString();
             FilmTitle.Text = selectedCells[4].Value.ToString();
         }
     }

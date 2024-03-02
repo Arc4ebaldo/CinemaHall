@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test2.DTO;
+using test2.Services;
 
 namespace test2.View
 {
@@ -18,41 +20,13 @@ namespace test2.View
             InitializeComponent();
         }
 
-        private void MovieBtn_Click(object sender, EventArgs e)
-        {
-            FilmForm m = new FilmForm();
-            m.Show();
-            this.Close();
-        }
+        private TicketService ticketService = new();
+        private string ID;
 
-        private void SeansBtn_Click(object sender, EventArgs e)
+        private void BiletForm_Load(object sender, EventArgs e)
         {
-            SeansForm m = new SeansForm();
-            m.Show();
-            this.Close();
+            AllTicket.DataSource = ticketService.GetAllTickets();
         }
-
-        private void ZalBtn_Click(object sender, EventArgs e)
-        {
-            ZalForm m = new ZalForm();
-            m.Show();
-            this.Close();
-        }
-
-        private void SotrudBtn_Click(object sender, EventArgs e)
-        {
-            SotrudForm m = new SotrudForm();
-            m.Show();
-            this.Close();
-        }
-
-        private void TransBtn_Click(object sender, EventArgs e)
-        {
-            TransForm m = new TransForm();
-            m.Show();
-            this.Close();
-        }
-
 
         private void CloseBtn_Click_1(object sender, EventArgs e)
         {
@@ -127,6 +101,43 @@ namespace test2.View
             FilmForm m = new FilmForm();
             m.Show();
             this.Close();
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            TicketDTO newTicket = new TicketDTO(
+                Valid.Text,
+                PriceLine.Text,
+                SeatAdress.Text,
+                Seans.Text
+                );
+            ticketService.CreateTicket(newTicket);
+            AllTicket.DataSource = ticketService.GetAllTickets();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            ticketService.DeleteTicketById(int.Parse(ID));
+            AllTicket.DataSource = ticketService.GetAllTickets();
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            TicketDTO newTicket = new TicketDTO(
+                ID,
+                PriceLine.Text,
+                SeatAdress.Text,
+                Seans.Text
+                );
+        }
+
+        private void AllTicket_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllTicket.SelectedCells;
+            ID = selectedCells[0].Value.ToString();
+            PriceLine.Text = selectedCells[1].Value.ToString();
+            SeatAdress.Text = selectedCells[2].Value.ToString();
+            Seans.Text = selectedCells[3].Value.ToString();
         }
     }
 }

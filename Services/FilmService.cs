@@ -4,7 +4,8 @@ using test2.Repositories;
 
 namespace test2.Services;
 
-public class FilmService {
+public class FilmService
+{
 
     private FilmRepo Repo;
 
@@ -13,15 +14,18 @@ public class FilmService {
         this.Repo = new();
     }
 
-    public void CreateFilm(FilmDTO film) {
+    public void CreateFilm(FilmDTO film)
+    {
         Repo.Create(film.ToFilm());
     }
 
-    public FilmDTO? GetFilmById(int id) {
+    public FilmDTO? GetFilmById(int id)
+    {
         return new FilmDTO(Repo.GetById(id));
     }
 
-    public List<FilmDTO> GetAllFilms() {
+    public List<FilmDTO> GetAllFilms()
+    {
         List<FilmDTO> films = new();
         foreach (var film in Repo.GetAll())
         {
@@ -30,11 +34,18 @@ public class FilmService {
         return films;
     }
 
-    public void UpdateFilm(FilmDTO updatedFilm) {
+    public void UpdateFilm(FilmDTO updatedFilm)
+    {
         Repo.Update(updatedFilm.ToFilm());
     }
 
-    public void DeleteFilmById(int id) {
+    public void DeleteFilmById(int id)
+    {
         Repo.DeleteById(id);
+    }
+
+    public Film GetFilmByName(string filmName)
+    {
+        return Repo.GetByName(filmName);
     }
 }

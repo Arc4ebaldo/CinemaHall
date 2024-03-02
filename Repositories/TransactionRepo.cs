@@ -5,9 +5,9 @@ namespace test2.Repositories;
 public class TransactionRepo {
     private ApplicationContext context;
 
-    public TransactionRepo(ApplicationContext context)
+    public TransactionRepo()
     {
-        this.context = context;
+        this.context = new();
     }
 
     public void Create(Transaction newTransaction) {

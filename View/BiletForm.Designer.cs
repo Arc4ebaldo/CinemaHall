@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             TransBtn = new Button();
             SotrudBtn = new Button();
@@ -40,13 +40,12 @@
             SeansBtn = new Button();
             MovieBtn = new Button();
             image1 = new PictureBox();
-            plase = new ComboBox();
             VnizBtn = new PictureBox();
             MaxBtn = new PictureBox();
             MinBtn = new PictureBox();
             CloseBtn = new PictureBox();
             Save = new Button();
-            AllFilms = new DataGridView();
+            AllTicket = new DataGridView();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -54,16 +53,17 @@
             Edit = new Button();
             Delete = new Button();
             Add = new Button();
-            cenic = new TextBox();
-            seans_id = new TextBox();
-            Title = new TextBox();
+            Seans = new TextBox();
+            Valid = new TextBox();
+            PriceLine = new MaskedTextBox();
+            SeatAdress = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MaxBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AllTicket).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -189,14 +189,6 @@
             image1.TabIndex = 7;
             image1.TabStop = false;
             // 
-            // plase
-            // 
-            plase.FormattingEnabled = true;
-            plase.Location = new Point(645, 84);
-            plase.Name = "plase";
-            plase.Size = new Size(121, 23);
-            plase.TabIndex = 45;
-            // 
             // VnizBtn
             // 
             VnizBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -265,48 +257,49 @@
             Save.Text = "Сохранить";
             Save.UseVisualStyleBackColor = false;
             // 
-            // AllFilms
+            // AllTicket
             // 
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = SystemColors.Window;
-            dataGridViewCellStyle17.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle17.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle17.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            AllFilms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
-            AllFilms.BackgroundColor = Color.White;
-            AllFilms.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = SystemColors.Window;
-            dataGridViewCellStyle18.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle18.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle18.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
-            AllFilms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            AllFilms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = SystemColors.Window;
-            dataGridViewCellStyle19.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle19.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle19.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle19.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.False;
-            AllFilms.DefaultCellStyle = dataGridViewCellStyle19;
-            AllFilms.GridColor = Color.FromArgb(15, 15, 15);
-            AllFilms.Location = new Point(312, 136);
-            AllFilms.Name = "AllFilms";
-            AllFilms.ReadOnly = true;
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = SystemColors.Window;
-            dataGridViewCellStyle20.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle20.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle20.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
-            AllFilms.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            AllFilms.Size = new Size(1015, 457);
-            AllFilms.TabIndex = 37;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            AllTicket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            AllTicket.BackgroundColor = Color.White;
+            AllTicket.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AllTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            AllTicket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllTicket.DefaultCellStyle = dataGridViewCellStyle3;
+            AllTicket.GridColor = Color.FromArgb(15, 15, 15);
+            AllTicket.Location = new Point(312, 136);
+            AllTicket.Name = "AllTicket";
+            AllTicket.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            AllTicket.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            AllTicket.Size = new Size(1015, 457);
+            AllTicket.TabIndex = 37;
+            AllTicket.RowHeaderMouseClick += AllTicket_RowHeaderMouseClick;
             // 
             // label4
             // 
@@ -315,16 +308,16 @@
             label4.ForeColor = Color.DimGray;
             label4.Location = new Point(808, 37);
             label4.Name = "label4";
-            label4.Size = new Size(96, 21);
+            label4.Size = new Size(64, 21);
             label4.TabIndex = 34;
-            label4.Text = "ID Сеанса";
+            label4.Text = "Сеанс";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(657, 37);
+            label3.Location = new Point(633, 37);
             label3.Name = "label3";
             label3.Size = new Size(61, 21);
             label3.TabIndex = 33;
@@ -367,6 +360,7 @@
             Edit.TabIndex = 30;
             Edit.Text = "Изменить";
             Edit.UseVisualStyleBackColor = false;
+            Edit.Click += Edit_Click;
             // 
             // Delete
             // 
@@ -383,6 +377,7 @@
             Delete.TabIndex = 29;
             Delete.Text = "Удалить";
             Delete.UseVisualStyleBackColor = false;
+            Delete.Click += Delete_Click;
             // 
             // Add
             // 
@@ -399,36 +394,46 @@
             Add.TabIndex = 28;
             Add.Text = "Добавить";
             Add.UseVisualStyleBackColor = false;
+            Add.Click += Add_Click;
             // 
-            // cenic
+            // Seans
             // 
-            cenic.BorderStyle = BorderStyle.None;
-            cenic.Cursor = Cursors.IBeam;
-            cenic.Font = new Font("Century Gothic", 12F);
-            cenic.Location = new Point(496, 84);
-            cenic.Name = "cenic";
-            cenic.Size = new Size(122, 20);
-            cenic.TabIndex = 26;
+            Seans.BorderStyle = BorderStyle.None;
+            Seans.Cursor = Cursors.IBeam;
+            Seans.Font = new Font("Century Gothic", 12F);
+            Seans.Location = new Point(820, 84);
+            Seans.Name = "Seans";
+            Seans.Size = new Size(140, 20);
+            Seans.TabIndex = 3;
             // 
-            // seans_id
+            // Valid
             // 
-            seans_id.BorderStyle = BorderStyle.None;
-            seans_id.Cursor = Cursors.IBeam;
-            seans_id.Font = new Font("Century Gothic", 12F);
-            seans_id.Location = new Point(808, 87);
-            seans_id.Name = "seans_id";
-            seans_id.Size = new Size(140, 20);
-            seans_id.TabIndex = 27;
+            Valid.BorderStyle = BorderStyle.None;
+            Valid.Cursor = Cursors.IBeam;
+            Valid.Font = new Font("Century Gothic", 12F);
+            Valid.Location = new Point(312, 84);
+            Valid.Name = "Valid";
+            Valid.Size = new Size(145, 20);
+            Valid.TabIndex = 0;
             // 
-            // Title
+            // PriceLine
             // 
-            Title.BorderStyle = BorderStyle.None;
-            Title.Cursor = Cursors.IBeam;
-            Title.Font = new Font("Century Gothic", 12F);
-            Title.Location = new Point(312, 84);
-            Title.Name = "Title";
-            Title.Size = new Size(145, 20);
-            Title.TabIndex = 25;
+            PriceLine.Location = new Point(496, 81);
+            PriceLine.Mask = "00000";
+            PriceLine.Name = "PriceLine";
+            PriceLine.Size = new Size(100, 23);
+            PriceLine.TabIndex = 1;
+            PriceLine.ValidatingType = typeof(int);
+            // 
+            // SeatAdress
+            // 
+            SeatAdress.BorderStyle = BorderStyle.None;
+            SeatAdress.Cursor = Cursors.IBeam;
+            SeatAdress.Font = new Font("Century Gothic", 12F);
+            SeatAdress.Location = new Point(633, 84);
+            SeatAdress.Name = "SeatAdress";
+            SeatAdress.Size = new Size(140, 20);
+            SeatAdress.TabIndex = 44;
             // 
             // BiletForm
             // 
@@ -436,13 +441,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(plase);
+            Controls.Add(SeatAdress);
+            Controls.Add(PriceLine);
             Controls.Add(VnizBtn);
             Controls.Add(MaxBtn);
             Controls.Add(MinBtn);
             Controls.Add(CloseBtn);
             Controls.Add(Save);
-            Controls.Add(AllFilms);
+            Controls.Add(AllTicket);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -450,13 +456,13 @@
             Controls.Add(Edit);
             Controls.Add(Delete);
             Controls.Add(Add);
-            Controls.Add(cenic);
-            Controls.Add(seans_id);
-            Controls.Add(Title);
+            Controls.Add(Seans);
+            Controls.Add(Valid);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "BiletForm";
             Text = "BiletForm";
+            Load += BiletForm_Load;
             MouseDown += BiletForm_MouseDown;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)image1).EndInit();
@@ -464,7 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)MaxBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)AllFilms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AllTicket).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -472,14 +478,13 @@
         #endregion
 
         private Panel panel1;
-        private ComboBox plase;
         private MaskedTextBox DataTime;
         private PictureBox VnizBtn;
         private PictureBox MaxBtn;
         private PictureBox MinBtn;
         private PictureBox CloseBtn;
         private Button Save;
-        private DataGridView AllFilms;
+        private DataGridView AllTicket;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -488,9 +493,8 @@
         private Button Edit;
         private Button Delete;
         private Button Add;
-        private TextBox cenic;
-        private TextBox seans_id;
-        private TextBox Title;
+        private TextBox Seans;
+        private TextBox Valid;
         private Button TransBtn;
         private Button SotrudBtn;
         private Button BiletBtn;
@@ -498,5 +502,7 @@
         private Button SeansBtn;
         private Button MovieBtn;
         private PictureBox image1;
+        private MaskedTextBox PriceLine;
+        private TextBox SeatAdress;
     }
 }

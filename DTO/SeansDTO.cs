@@ -1,50 +1,52 @@
 using test2.Models;
 using test2.Repositories;
+using test2.Services;
 
 namespace test2.DTO;
 
 public class SeansDTO
 {
-    public string Id {get; set;}
+    private HallService hallService = new();
+    private FilmService filmService = new();
+    public string Id { get; set; }
     public string StartDatetime { get; set; }
     public string Duration { get; set; }
-    public Hall Hall { get; set; }
-    public Film Film { get; set; }
+    public string HallName { get; set; }
+    public string FilmName { get; set; }
 
     public SeansDTO(Seans seans)
     {
         Id = seans.Id.ToString();
         StartDatetime = seans.StartDateTime.ToString();
         Duration = seans.Duration.ToString();
-        Hall = seans.Hall;
-        Film = seans.Film;
+        HallName = seans.Hall.Name;
+        FilmName = seans.Film.Title;
     }
 
-    public SeansDTO(string startDatetime, string duration, Hall hall, Film film)
+    public SeansDTO(string startDatetime, string duration, string hallName, string filmName)
     {
         StartDatetime = startDatetime;
         Duration = duration;
-        Hall = hall;
-        Film = film;
+        HallName = hallName;
+        FilmName = filmName;
     }
 
-    public SeansDTO(string id, string startDatetime, string duration, Hall hall, Film film)
+    public SeansDTO(string id, string startDatetime, string duration, string hallName, string filmName)
     {
         Id = id;
         StartDatetime = startDatetime;
         Duration = duration;
-        Hall = hall;
-        Film = film;
+        HallName = hallName;
+        FilmName = filmName;
     }
 
     internal Seans ToSeans()
     {
         return new Seans(
-            int.Parse(Id),
             DateTime.Parse(Duration),
             TimeSpan.Parse(Duration),
-            Hall,
-            Film
+            hallService.GetHallByName(HallName),
+            filmService.GetFilmByName(FilmName)
         );
     }
 }

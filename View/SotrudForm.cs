@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test2.DTO;
+using test2.Services;
 
 namespace test2.View
 {
@@ -18,9 +20,12 @@ namespace test2.View
             InitializeComponent();
         }
 
+        private string ID;
+        private EmployeeService EmployeeService = new();
+
         private void SotrudForm_Load(object sender, EventArgs e)
         {
-
+            AllEmployee.DataSource = EmployeeService.GetAllEmployees();
         }
 
         private void MovieBtn_Click(object sender, EventArgs e)
@@ -96,6 +101,45 @@ namespace test2.View
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            EmployeeDTO newEmployee = new EmployeeDTO(
+                FirstName.Text,
+                LastName.Text,
+                Role.Text
+                );
+            EmployeeService.CreateEmployee(newEmployee);
+            AllEmployee.DataSource =  EmployeeService.GetAllEmployees();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            EmployeeService.DeleteEmployeeById(int.Parse(ID));
+            AllEmployee.DataSource = EmployeeService.GetAllEmployees();
+
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            EmployeeDTO newEmployee = new EmployeeDTO(
+                ID,
+                FirstName.Text,
+                LastName.Text,
+                Role.Text
+                );
+            EmployeeService.UpdateEmployee(newEmployee);
+            AllEmployee.DataSource = EmployeeService.GetAllEmployees();
+        }
+
+        private void AllEmployee_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllEmployee.SelectedCells;
+            ID = selectedCells[0].Value.ToString();
+            FirstName.Text = selectedCells[1].Value.ToString();
+            LastName.Text = selectedCells[2].Value.ToString();
+            Role.Text = selectedCells[3].Value.ToString();
         }
     }
 }

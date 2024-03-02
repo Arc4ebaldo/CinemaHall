@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test2.DTO;
+using test2.Services;
 
 namespace test2.View
 {
@@ -18,9 +20,13 @@ namespace test2.View
             InitializeComponent();
         }
 
+        private TransactionService transactionService = new();
+        private string ID;
+
         private void TransForm_Load(object sender, EventArgs e)
         {
-
+            AllTrans.DataSource = transactionService.GetAllTransactions();
+            TipyTrans.DataSource = new List<string>() { "Наличка", "Перевод", "QR код", "Картой" };
         }
 
         private void MovieBtn_Click(object sender, EventArgs e)
@@ -96,6 +102,43 @@ namespace test2.View
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            TransactionDTO newTrans = new TransactionDTO(
+                TransID.Text,
+                DataTime.Text,
+                TipyTrans.Text,
+                Amount.Text
+                );
+            transactionService.CreateTransaction(newTrans);
+            AllTrans.DataSource = transactionService.GetAllTransactions();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            transactionService.DeleteTransactionById(int.Parse(ID));
+            AllTrans.DataSource = transactionService.GetAllTransactions();
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            TransactionDTO newTrans = new TransactionDTO(
+                TransID.Text,
+                DataTime.Text,
+                TipyTrans.Text,
+                Amount.Text
+                );
+        }
+
+        private void AllTrans_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllTrans.SelectedCells;
+            TransID.Text = selectedCells[0].Value.ToString();
+            DataTime.Text = selectedCells[1].Value.ToString();
+            TipyTrans.Text = selectedCells[2].Value.ToString();
+            Amount.Text = selectedCells[3].Value.ToString();
         }
     }
 }

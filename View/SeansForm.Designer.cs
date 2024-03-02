@@ -57,7 +57,7 @@
             Add = new Button();
             FilmTitle = new TextBox();
             StartDateTime = new MaskedTextBox();
-            Hall = new ComboBox();
+            HallList = new ComboBox();
             filmBindingSource = new BindingSource(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
@@ -432,13 +432,13 @@
             StartDateTime.TabIndex = 0;
             StartDateTime.ValidatingType = typeof(DateTime);
             // 
-            // Hall
+            // HallList
             // 
-            Hall.FormattingEnabled = true;
-            Hall.Location = new Point(714, 84);
-            Hall.Name = "Hall";
-            Hall.Size = new Size(121, 23);
-            Hall.TabIndex = 2;
+            HallList.FormattingEnabled = true;
+            HallList.Location = new Point(714, 84);
+            HallList.Name = "HallList";
+            HallList.Size = new Size(121, 23);
+            HallList.TabIndex = 2;
             // 
             // filmBindingSource
             // 
@@ -450,7 +450,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Hall);
+            Controls.Add(HallList);
             Controls.Add(StartDateTime);
             Controls.Add(Duration);
             Controls.Add(VnizBtn);
@@ -511,7 +511,7 @@
         private Button MovieBtn;
         private PictureBox image1;
         private MaskedTextBox StartDateTime;
-        private ComboBox Hall;
+        private ComboBox HallList;
         private BindingSource filmBindingSource;
     }
 }

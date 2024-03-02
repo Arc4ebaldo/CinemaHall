@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             TransBtn = new Button();
             image1 = new PictureBox();
@@ -256,46 +256,47 @@
             // 
             // AllHall
             // 
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle5.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            AllHall.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            AllHall.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AllHall.BackgroundColor = Color.White;
             AllHall.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle6.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            AllHall.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AllHall.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllHall.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Window;
-            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle7.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            AllHall.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllHall.DefaultCellStyle = dataGridViewCellStyle3;
             AllHall.GridColor = Color.FromArgb(15, 15, 15);
             AllHall.Location = new Point(298, 136);
             AllHall.Name = "AllHall";
             AllHall.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Khaki;
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            AllHall.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            AllHall.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             AllHall.Size = new Size(1015, 457);
             AllHall.TabIndex = 55;
+            AllHall.RowHeaderMouseClick += AllHall_RowHeaderMouseClick;
             // 
             // label1
             // 
@@ -323,6 +324,7 @@
             Edit.TabIndex = 50;
             Edit.Text = "Изменить";
             Edit.UseVisualStyleBackColor = false;
+            Edit.Click += Edit_Click;
             // 
             // Delete
             // 
@@ -339,6 +341,7 @@
             Delete.TabIndex = 49;
             Delete.Text = "Удалить";
             Delete.UseVisualStyleBackColor = false;
+            Delete.Click += Delete_Click;
             // 
             // Add
             // 

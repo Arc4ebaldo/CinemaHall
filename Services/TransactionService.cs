@@ -7,9 +7,9 @@ namespace test2.Services;
 public class TransactionService {
     private TransactionRepo Repo;
 
-    public TransactionService(TransactionRepo repo)
+    public TransactionService()
     {
-        Repo = repo;
+        Repo = new();
     }
 
     public void CreateTransaction(TransactionDTO newTransaction) {

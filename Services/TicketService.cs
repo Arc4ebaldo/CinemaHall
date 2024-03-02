@@ -7,9 +7,9 @@ namespace test2.Services;
 public class TicketService {
     private TicketRepo Repo;
 
-    public TicketService(TicketRepo repo)
+    public TicketService()
     {
-        Repo = repo;
+        Repo = new();
     }
 
     public void CreateTicket(TicketDTO newTicket) {
@@ -33,7 +33,7 @@ public class TicketService {
         Repo.Update(newTicket.ToTicket());
     }
 
-    public void DeleteById(int id) {
+    public void DeleteTicketById(int id) {
         Repo.DeleteById(id);
     }
 }

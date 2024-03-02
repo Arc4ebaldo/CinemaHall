@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test2.DTO;
+using test2.Models;
 using test2.Services;
 
 namespace test2.View
@@ -20,7 +22,7 @@ namespace test2.View
         }
 
         private HallService hallService = new();
-
+        private string ID;
         private void ZalForm_Load(object sender, EventArgs e)
         {
             AllHall.DataSource = hallService.GetAllHalls();
@@ -104,7 +106,37 @@ namespace test2.View
 
         private void Add_Click(object sender, EventArgs e)
         {
+            HallDTO newHall = new HallDTO(
+                    Capasity.Text,
+                    HallName.Text
+                );
+            hallService.CreateHall(newHall);
+            AllHall.DataSource = hallService.GetAllHalls();
+        }
 
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            hallService.DeleteHallById(int.Parse(ID));
+            AllHall.DataSource = hallService.GetAllHalls();
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            HallDTO newHall = new HallDTO(
+                    ID,
+                    Capasity.Text,
+                    HallName.Text
+                );
+            hallService.UpdateHall(newHall);
+            AllHall.DataSource = hallService.GetAllHalls();
+        }
+
+        private void AllHall_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllHall.SelectedCells;
+            ID = selectedCells[0].Value.ToString();
+            Capasity.Text = selectedCells[1].Value.ToString();
+            HallName.Text = selectedCells[2].Value.ToString();
         }
     }
 }
