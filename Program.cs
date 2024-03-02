@@ -1,3 +1,5 @@
+using test2.View;
+
 namespace test2
 {
     internal static class Program
@@ -11,9 +13,7 @@ namespace test2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FilmForm());
-            // FilmRepo filmRepo = new();
-            // Console.WriteLine(filmRepo.GetById(2).ReleaseYear);
+            Application.Run(new LoginForm());
         }
     }
 }
