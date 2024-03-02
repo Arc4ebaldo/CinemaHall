@@ -1,6 +1,3 @@
-using test2.Models;
-using test2.Repositories;
-
 namespace test2
 {
     internal static class Program

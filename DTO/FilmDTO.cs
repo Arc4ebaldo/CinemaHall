@@ -1,25 +1,25 @@
 using test2.Models;
 
 namespace test2.DTO;
-public class FilmDTO
+public class FilmDTO(Film film)
 {
-    public string Title {get; set;}
-    public string Director {get; set;}
-    public string Genre {get; set;}
-    public string Duration {get; set;}
-    public string ReleaseYear {get; set;}
-    public string Description {get; set;}
+    public string Id { get; set; } = film.Id.ToString();
+    public string Title { get; set; } = film.Title;
+    public string Director { get; set; } = film.Director;
+    public string Genre { get; set; } = film.Genre;
+    public string Duration { get; set; } = film.Duration.ToString();
+    public string ReleaseDate { get; set; } = film.ReleaseDate.ToString();
+    public string Description { get; set; } = film.Description;
 
-    public FilmDTO(Film? film)
-    {
-        if (film is null) {
-            return;
-        }
-        this.Title = film.Title;
-        this.Director = film.Director;
-        this.Genre = film.Genre;
-        this.Duration = film.Duration.ToString();
-        this.ReleaseYear = film.ReleaseYear.ToString();
-        this.Description = film.Descript;
+    public Film ToFilm() {
+        return new Film(
+            int.Parse(Id),
+            Title,
+            Genre,
+            Director,
+            TimeSpan.Parse(Duration),
+            DateOnly.Parse(ReleaseDate),
+            Description
+        );
     }
 }

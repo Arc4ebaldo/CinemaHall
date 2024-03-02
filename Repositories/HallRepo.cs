@@ -1,10 +1,9 @@
-using test2.DTO;
 using test2.Models;
 
 namespace test2.Repositories;
 
 public class HallRepo {
-    private BaseDbContext context;
+    private ApplicationContext context;
 
     public HallRepo () {
         this.context = new();
@@ -15,8 +14,12 @@ public class HallRepo {
         context.SaveChanges();
     }
 
-    public HallDTO? GetById(int id) {
-        return new HallDTO(context.Halls.Find(id));
+    public Hall? GetById(int id) {
+        return context.Halls.Find(id);
+    }
+
+    public IEnumerable<Hall> GetAll() {
+        return context.Halls.AsEnumerable();
     }
 
     public void Update(Hall hall) {

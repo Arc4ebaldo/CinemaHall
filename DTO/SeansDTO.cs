@@ -1,22 +1,24 @@
 using test2.Models;
+using test2.Repositories;
 
 namespace test2.DTO;
 
-public class SeansDTO {
-    public string StartDatetime {get; set;}
-    public string Duration {get; set;}
-    public string HallName {get; set;}
-    public string FilmName {get; set;}
-    public List<Ticket> TicketList {get; set;}
+public class SeansDTO(Seans seans)
+{
+    public string Id {get; set;} = seans.Id.ToString();
+    public string StartDatetime { get; set; } = seans.StartDateTime.ToString();
+    public string Duration { get; set; } = seans.Duration.ToString();
+    public Hall Hall { get; set; } = seans.Hall;
+    public Film Film { get; set; } = seans.Film;
 
-    public SeansDTO (Sean seans) {
-        if (seans is null) {
-            return;
-        }
-        this.StartDatetime = seans.StartDatetime.ToString();
-        this.Duration = seans.Duration.ToString();
-        this.HallName = seans.Hall.Namy;
-        this.FilmName = seans.Film.Title;
-        this.TicketList = seans.Tickets.ToList();
+    internal Seans ToSeans()
+    {
+        return new Seans(
+            int.Parse(Id),
+            DateTime.Parse(Duration),
+            TimeSpan.Parse(Duration),
+            Hall,
+            Film
+        );
     }
 }

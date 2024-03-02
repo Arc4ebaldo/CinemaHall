@@ -1,10 +1,9 @@
-using test2.DTO;
 using test2.Models;
 
 namespace test2.Repositories;
 
 public class TicketRepo {
-    private BaseDbContext context;
+    private ApplicationContext context;
 
     public TicketRepo () {
         this.context = new();
@@ -15,8 +14,12 @@ public class TicketRepo {
         context.SaveChanges();
     }
 
-    public TicketDTO GetById(int id) {
-        return new TicketDTO(context.Tickets.Find(id));
+    public Ticket? GetById(int id) {
+        return context.Tickets.Find(id);
+    }
+
+    public IEnumerable<Ticket> GetAll() {
+        return context.Tickets.AsEnumerable();
     }
 
     public void Update(Ticket ticket) {

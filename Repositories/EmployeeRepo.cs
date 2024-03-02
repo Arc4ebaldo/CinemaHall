@@ -1,23 +1,26 @@
-using test2.DTO;
 using test2.Models;
 
 namespace test2.Repositories;
 
 public class EmployeeRepo {
-    private BaseDbContext context;
+    private ApplicationContext context;
 
     public EmployeeRepo()
     {
         this.context = new();
     }
 
-    public EmployeeDTO? GetById(int id) {
-        return new EmployeeDTO(context.Employees.Find(id));
+    public Employee? GetById(int id) {
+        return context.Employees.Find(id);
     }
 
-    public EmployeeDTO? GetByFirstnameAndLastname (string firstname, string lastname) {
-        return new EmployeeDTO(context.Employees
+    public Employee? GetByFirstnameAndLastname (string firstname, string lastname) {
+        return context.Employees
             .Where(e => e.FirstName == firstname && e.LastName == lastname)
-            .First());
+            .First();
+    }
+
+    public IEnumerable<Employee> GetAll() {
+        return context.Employees.AsEnumerable();
     }
 }

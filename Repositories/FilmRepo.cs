@@ -1,13 +1,12 @@
-using test2.DTO;
 using test2.Models;
 namespace test2.Repositories;
 
 public class FilmRepo {
-    BaseDbContext context;
+    private ApplicationContext context;
 
     public FilmRepo()
     {
-        this.context = new BaseDbContext();
+        this.context = new ApplicationContext();
     }
 
     public void Create(Film newFilm) {
@@ -15,10 +14,14 @@ public class FilmRepo {
         context.SaveChanges();
     }
 
-    public FilmDTO? GetById(int id) {
-        return new FilmDTO(context.Films.Find(id));
+    public Film? GetById(int id) {
+        return context.Films.Find(id);
     }
 
+    public IEnumerable<Film> GetAll() {
+        return context.Films.AsEnumerable();
+    }
+    
     public void Update(Film updatedFilm) {
         context.Films.Update(updatedFilm);
         context.SaveChanges();

@@ -2,17 +2,17 @@ using test2.Models;
 
 namespace test2.DTO;
 
-public class HallDTO {
-    public string? Capacity {get; set;}
-    public string? Name {get; set;}
-    public List<Sean>? SeansList {get; set;}
+public class HallDTO(Hall hall)
+{
+    public string Id { get; set; } = hall.Id.ToString();
+    public string? Capacity { get; set; } = hall.Capasity.ToString();
+    public string? Name { get; set; } = hall.Name;
 
-    public HallDTO (Hall? hall) {
-        if (hall is null) {
-            return;
-        }
-        this.Capacity = hall.Capacity.ToString();
-        this.Name = hall.Namy;
-        this.SeansList = hall.Seans.ToList();
+    public Hall ToHall() {
+        return new Hall(
+            int.Parse(Id),
+            Name,
+            int.Parse(Capacity)
+            );
     }
 }

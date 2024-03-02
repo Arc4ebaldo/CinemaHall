@@ -1,18 +1,28 @@
-﻿namespace test2.Models;
+using System.ComponentModel.DataAnnotations;
 
-public partial class Hall
+namespace test2.Models;
+
+public class Hall
 {
-    public int HallId { get; set; }
-
-    public int? Capacity { get; set; }
-
-    public string? Namy { get; set; }
-
-    public virtual ICollection<Sean> Seans { get; set; } = new List<Sean>();
-
-    public Hall (int capacity, string name, ICollection<Sean> seansList) {
-        this.Capacity = capacity;
-        this.Namy = name;
-        this.Seans = seansList;
+    public Hall()
+    {
     }
+
+    public Hall(string? name, int? capasity)
+    {
+        Name = name;
+        Capasity = capasity;
+    }
+
+    public Hall(int id, string? name, int? capasity)
+    {
+        Id = id;
+        Name = name;
+        Capasity = capasity;
+    }
+
+    [Key]
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int? Capasity { get; set; }
 }

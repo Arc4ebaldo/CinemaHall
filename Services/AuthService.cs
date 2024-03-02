@@ -1,20 +1,19 @@
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using test2.DTO;
-using test2.Models;
-using test2.Repositories;
+
+namespace test2.Services;
 
 public class AuthService {
     private const string Password = "123456";
-    private EmployeeRepo employeeRepo;
+    private EmployeeService employeeService;
 
     public AuthService()
     {
-        this.employeeRepo = new();
+        this.employeeService = new();
     }
 
     public bool IsCorrect(string login, string password) {
-        string[] FnameLname = login.Split(" ");
-        EmployeeDTO? employee = employeeRepo.GetByFirstnameAndLastname(FnameLname[0], FnameLname[1]);
+        EmployeeDTO? employee = employeeService
+                                    .GetEmployeeByLogin(login);
         if (employee is null) {
             return false;
         }
