@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -138,5 +139,36 @@ namespace test2.View
             Capasity.Text = selectedCells[1].Value.ToString();
             HallName.Text = selectedCells[2].Value.ToString();
         }
+
+        private string result = "";
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            result = "Строка 1\n\n";
+
+            result += "Строка 2\nСтрока 3";
+
+            // объект для печати
+            PrintDocument printDocument = new PrintDocument();
+
+            // обработчик события печати
+            printDocument.PrintPage += PrintPageHandler;
+
+            // диалог настройки печати
+            PrintDialog printDialog = new PrintDialog();
+
+            // установка объекта печати для его настройки
+            printDialog.Document = printDocument;
+
+            // если в диалоге было нажато ОК
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); // печатаем
+        }
+
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
     }
 }

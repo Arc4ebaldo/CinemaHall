@@ -1,3 +1,4 @@
+using System.Drawing.Printing;
 using System.Runtime.InteropServices;
 using test2.DTO;
 using test2.Models;
@@ -151,6 +152,33 @@ namespace test2
             Description.Text = selectedCells[6].Value.ToString();
         }
 
-     
+        private string result = "";
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            result = "Строка 1\n\n";
+
+            result += "Строка 2\nСтрока 3";
+
+            // объект для печати
+            PrintDocument printDocument = new PrintDocument();
+
+            // обработчик события печати
+            printDocument.PrintPage += PrintPageHandler;
+
+            // диалог настройки печати
+            PrintDialog printDialog = new PrintDialog();
+
+            // установка объекта печати для его настройки
+            printDialog.Document = printDocument;
+
+            // если в диалоге было нажато ОК
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); // печатаем
+        }
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
     }
 }

@@ -48,6 +48,7 @@
             filmBindingSource = new BindingSource(components);
             AllFilms = new DataGridView();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             TransBtn = new Button();
             SotrudBtn = new Button();
             BiletBtn = new Button();
@@ -55,7 +56,6 @@
             SeansBtn = new Button();
             MovieBtn = new Button();
             image1 = new PictureBox();
-            Save = new Button();
             ReleaseDate = new DateTimePicker();
             CloseBtn = new PictureBox();
             MinBtn = new PictureBox();
@@ -63,9 +63,12 @@
             VnizBtn = new PictureBox();
             Duration = new MaskedTextBox();
             Genre = new ComboBox();
+            Print = new Button();
+            Poisk = new Button();
             ((System.ComponentModel.ISupportInitialize)filmBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).BeginInit();
@@ -75,32 +78,34 @@
             // 
             // Title
             // 
-            Title.BorderStyle = BorderStyle.None;
+            Title.BorderStyle = BorderStyle.FixedSingle;
             Title.Cursor = Cursors.IBeam;
             Title.Font = new Font("Century Gothic", 12F);
+            Title.ForeColor = Color.FromArgb(15, 15, 15);
             Title.Location = new Point(317, 78);
             Title.Name = "Title";
-            Title.Size = new Size(145, 20);
+            Title.Size = new Size(145, 27);
             Title.TabIndex = 0;
             // 
             // Description
             // 
-            Description.BorderStyle = BorderStyle.None;
+            Description.BorderStyle = BorderStyle.FixedSingle;
             Description.Cursor = Cursors.IBeam;
             Description.Font = new Font("Century Gothic", 12F);
             Description.Location = new Point(1192, 78);
             Description.Name = "Description";
-            Description.Size = new Size(140, 20);
+            Description.Size = new Size(140, 27);
             Description.TabIndex = 5;
             // 
             // Director
             // 
-            Director.BorderStyle = BorderStyle.None;
+            Director.BorderStyle = BorderStyle.FixedSingle;
             Director.Cursor = Cursors.IBeam;
             Director.Font = new Font("Century Gothic", 12F);
-            Director.Location = new Point(501, 78);
+            Director.ForeColor = Color.FromArgb(15, 15, 15);
+            Director.Location = new Point(488, 78);
             Director.Name = "Director";
-            Director.Size = new Size(122, 20);
+            Director.Size = new Size(122, 27);
             Director.TabIndex = 1;
             // 
             // Add
@@ -110,11 +115,11 @@
             Add.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             Add.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             Add.FlatStyle = FlatStyle.Flat;
-            Add.Font = new Font("Century Gothic", 12F);
+            Add.Font = new Font("Century Gothic", 14.25F);
             Add.ForeColor = Color.LightGray;
-            Add.Location = new Point(333, 608);
+            Add.Location = new Point(317, 608);
             Add.Name = "Add";
-            Add.Size = new Size(101, 30);
+            Add.Size = new Size(110, 30);
             Add.TabIndex = 6;
             Add.Text = "Добавить";
             Add.UseVisualStyleBackColor = false;
@@ -127,11 +132,11 @@
             Delete.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             Delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             Delete.FlatStyle = FlatStyle.Flat;
-            Delete.Font = new Font("Century Gothic", 12F);
+            Delete.Font = new Font("Century Gothic", 14.25F);
             Delete.ForeColor = Color.LightGray;
-            Delete.Location = new Point(584, 608);
+            Delete.Location = new Point(576, 608);
             Delete.Name = "Delete";
-            Delete.Size = new Size(101, 30);
+            Delete.Size = new Size(110, 30);
             Delete.TabIndex = 7;
             Delete.Text = "Удалить";
             Delete.UseVisualStyleBackColor = false;
@@ -144,11 +149,11 @@
             Edit.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             Edit.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             Edit.FlatStyle = FlatStyle.Flat;
-            Edit.Font = new Font("Century Gothic", 12F);
+            Edit.Font = new Font("Century Gothic", 14.25F);
             Edit.ForeColor = Color.LightGray;
-            Edit.Location = new Point(458, 608);
+            Edit.Location = new Point(448, 608);
             Edit.Name = "Edit";
-            Edit.Size = new Size(101, 30);
+            Edit.Size = new Size(110, 30);
             Edit.TabIndex = 8;
             Edit.Text = "Изменить";
             Edit.UseVisualStyleBackColor = false;
@@ -157,66 +162,66 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F);
+            label1.Font = new Font("Century Gothic", 14.25F);
             label1.ForeColor = Color.DimGray;
             label1.Location = new Point(317, 31);
             label1.Name = "label1";
-            label1.Size = new Size(87, 21);
+            label1.Size = new Size(101, 22);
             label1.TabIndex = 9;
             label1.Text = "Название";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F);
+            label2.Font = new Font("Century Gothic", 14.25F);
             label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(501, 31);
+            label2.Location = new Point(488, 31);
             label2.Name = "label2";
-            label2.Size = new Size(91, 21);
+            label2.Size = new Size(109, 22);
             label2.TabIndex = 10;
             label2.Text = "Режиссер";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F);
+            label3.Font = new Font("Century Gothic", 14.25F);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(662, 31);
+            label3.Location = new Point(640, 31);
             label3.Name = "label3";
-            label3.Size = new Size(57, 21);
+            label3.Size = new Size(65, 22);
             label3.TabIndex = 11;
             label3.Text = "Жанр";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 12F);
+            label4.Font = new Font("Century Gothic", 14.25F);
             label4.ForeColor = Color.DimGray;
-            label4.Location = new Point(813, 31);
+            label4.Location = new Point(794, 31);
             label4.Name = "label4";
-            label4.Size = new Size(168, 21);
+            label4.Size = new Size(198, 22);
             label4.TabIndex = 12;
             label4.Text = "Продолжительность";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F);
+            label5.Font = new Font("Century Gothic", 14.25F);
             label5.ForeColor = Color.DimGray;
-            label5.Location = new Point(1023, 31);
+            label5.Location = new Point(1011, 31);
             label5.Name = "label5";
-            label5.Size = new Size(105, 21);
+            label5.Size = new Size(127, 22);
             label5.TabIndex = 13;
             label5.Text = "Год выпуска";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 12F);
+            label6.Font = new Font("Century Gothic", 14.25F);
             label6.ForeColor = Color.DimGray;
             label6.Location = new Point(1192, 31);
             label6.Name = "label6";
-            label6.Size = new Size(95, 21);
+            label6.Size = new Size(110, 22);
             label6.TabIndex = 14;
             label6.Text = "Описание";
             // 
@@ -233,6 +238,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
             AllFilms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            AllFilms.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllFilms.BackgroundColor = Color.White;
             AllFilms.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -271,6 +277,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Crimson;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(TransBtn);
             panel1.Controls.Add(SotrudBtn);
             panel1.Controls.Add(BiletBtn);
@@ -283,6 +290,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(286, 661);
             panel1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Khaki;
+            pictureBox1.Image = Properties.Resources.film_img;
+            pictureBox1.Location = new Point(30, 200);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // TransBtn
             // 
@@ -367,12 +385,14 @@
             // MovieBtn
             // 
             MovieBtn.BackColor = Color.Khaki;
+            MovieBtn.BackgroundImageLayout = ImageLayout.None;
             MovieBtn.Cursor = Cursors.Hand;
             MovieBtn.FlatAppearance.MouseDownBackColor = Color.PaleVioletRed;
             MovieBtn.FlatAppearance.MouseOverBackColor = Color.Khaki;
             MovieBtn.FlatStyle = FlatStyle.Flat;
             MovieBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             MovieBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            MovieBtn.ImageAlign = ContentAlignment.MiddleLeft;
             MovieBtn.Location = new Point(30, 200);
             MovieBtn.Name = "MovieBtn";
             MovieBtn.Size = new Size(228, 55);
@@ -390,30 +410,14 @@
             image1.TabIndex = 0;
             image1.TabStop = false;
             // 
-            // Save
-            // 
-            Save.BackColor = Color.FromArgb(40, 40, 40);
-            Save.FlatAppearance.BorderSize = 0;
-            Save.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Save.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Save.FlatStyle = FlatStyle.Flat;
-            Save.Font = new Font("Century Gothic", 12F);
-            Save.ForeColor = Color.LightGray;
-            Save.Location = new Point(707, 608);
-            Save.Name = "Save";
-            Save.Size = new Size(107, 30);
-            Save.TabIndex = 17;
-            Save.Text = "Сохранить";
-            Save.UseVisualStyleBackColor = false;
-            // 
             // ReleaseDate
             // 
             ReleaseDate.CalendarFont = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ReleaseDate.CalendarForeColor = Color.FromArgb(15, 15, 15);
             ReleaseDate.CalendarTitleBackColor = Color.Khaki;
             ReleaseDate.Cursor = Cursors.Hand;
-            ReleaseDate.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ReleaseDate.Location = new Point(1000, 75);
+            ReleaseDate.Font = new Font("Century Gothic", 12F);
+            ReleaseDate.Location = new Point(1011, 78);
             ReleaseDate.Name = "ReleaseDate";
             ReleaseDate.Size = new Size(158, 27);
             ReleaseDate.TabIndex = 4;
@@ -472,9 +476,11 @@
             // 
             // Duration
             // 
+            Duration.BorderStyle = BorderStyle.FixedSingle;
             Duration.Cursor = Cursors.IBeam;
-            Duration.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Duration.Location = new Point(813, 75);
+            Duration.Font = new Font("Century Gothic", 12F);
+            Duration.ForeColor = Color.FromArgb(15, 15, 15);
+            Duration.Location = new Point(794, 80);
             Duration.Mask = "00:00";
             Duration.Name = "Duration";
             Duration.Size = new Size(147, 27);
@@ -483,11 +489,48 @@
             // 
             // Genre
             // 
+            Genre.Font = new Font("Century Gothic", 12F);
+            Genre.ForeColor = Color.FromArgb(15, 15, 15);
             Genre.FormattingEnabled = true;
-            Genre.Location = new Point(650, 78);
+            Genre.Location = new Point(640, 78);
             Genre.Name = "Genre";
-            Genre.Size = new Size(121, 23);
+            Genre.Size = new Size(121, 29);
             Genre.TabIndex = 2;
+            // 
+            // Print
+            // 
+            Print.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            Print.BackColor = Color.FromArgb(40, 40, 40);
+            Print.FlatAppearance.BorderSize = 0;
+            Print.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            Print.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            Print.FlatStyle = FlatStyle.Flat;
+            Print.Font = new Font("Century Gothic", 14.25F);
+            Print.ForeColor = Color.LightGray;
+            Print.Location = new Point(704, 608);
+            Print.Name = "Print";
+            Print.Size = new Size(119, 30);
+            Print.TabIndex = 45;
+            Print.Text = "Печать";
+            Print.UseVisualStyleBackColor = false;
+            Print.Click += Print_Click;
+            // 
+            // Poisk
+            // 
+            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            Poisk.BackColor = Color.FromArgb(40, 40, 40);
+            Poisk.FlatAppearance.BorderSize = 0;
+            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            Poisk.FlatStyle = FlatStyle.Flat;
+            Poisk.Font = new Font("Century Gothic", 14.25F);
+            Poisk.ForeColor = Color.LightGray;
+            Poisk.Location = new Point(840, 608);
+            Poisk.Name = "Poisk";
+            Poisk.Size = new Size(119, 30);
+            Poisk.TabIndex = 46;
+            Poisk.Text = "Поиск";
+            Poisk.UseVisualStyleBackColor = false;
             // 
             // FilmForm
             // 
@@ -495,6 +538,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
+            Controls.Add(Poisk);
+            Controls.Add(Print);
             Controls.Add(Genre);
             Controls.Add(Duration);
             Controls.Add(VnizBtn);
@@ -502,7 +547,6 @@
             Controls.Add(MinBtn);
             Controls.Add(CloseBtn);
             Controls.Add(ReleaseDate);
-            Controls.Add(Save);
             Controls.Add(panel1);
             Controls.Add(AllFilms);
             Controls.Add(label6);
@@ -525,6 +569,7 @@
             ((System.ComponentModel.ISupportInitialize)filmBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)AllFilms).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)image1).EndInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).EndInit();
@@ -551,7 +596,6 @@
         private BindingSource filmBindingSource;
         private DataGridView AllFilms;
         private Panel panel1;
-        private Button Save;
         private Button MovieBtn;
         private PictureBox image1;
         private Button TransBtn;
@@ -566,5 +610,8 @@
         private PictureBox VnizBtn;
         private MaskedTextBox Duration;
         private ComboBox Genre;
+        private Button Print;
+        private Button Poisk;
+        private PictureBox pictureBox1;
     }
 }

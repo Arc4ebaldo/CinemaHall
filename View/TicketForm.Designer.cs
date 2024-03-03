@@ -44,7 +44,6 @@
             MaxBtn = new PictureBox();
             MinBtn = new PictureBox();
             CloseBtn = new PictureBox();
-            Save = new Button();
             AllTicket = new DataGridView();
             label4 = new Label();
             label3 = new Label();
@@ -57,6 +56,8 @@
             Valid = new ComboBox();
             PriceLine = new MaskedTextBox();
             SeatAdress = new TextBox();
+            Print = new Button();
+            Poisk = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
@@ -241,22 +242,6 @@
             CloseBtn.TabStop = false;
             CloseBtn.Click += CloseBtn_Click_1;
             // 
-            // Save
-            // 
-            Save.BackColor = Color.FromArgb(40, 40, 40);
-            Save.FlatAppearance.BorderSize = 0;
-            Save.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Save.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Save.FlatStyle = FlatStyle.Flat;
-            Save.Font = new Font("Century Gothic", 12F);
-            Save.ForeColor = Color.LightGray;
-            Save.Location = new Point(702, 614);
-            Save.Name = "Save";
-            Save.Size = new Size(107, 30);
-            Save.TabIndex = 38;
-            Save.Text = "Сохранить";
-            Save.UseVisualStyleBackColor = false;
-            // 
             // AllTicket
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -266,6 +251,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(15, 15, 15);
             AllTicket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            AllTicket.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllTicket.BackgroundColor = Color.White;
             AllTicket.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -304,59 +290,60 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 12F);
+            label4.Font = new Font("Century Gothic", 14.25F);
             label4.ForeColor = Color.DimGray;
-            label4.Location = new Point(808, 37);
+            label4.Location = new Point(808, 27);
             label4.Name = "label4";
-            label4.Size = new Size(64, 21);
+            label4.Size = new Size(73, 22);
             label4.TabIndex = 34;
             label4.Text = "Сеанс";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F);
+            label3.Font = new Font("Century Gothic", 14.25F);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(633, 37);
+            label3.Location = new Point(633, 27);
             label3.Name = "label3";
-            label3.Size = new Size(61, 21);
+            label3.Size = new Size(70, 22);
             label3.TabIndex = 33;
             label3.Text = "Место";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F);
+            label2.Font = new Font("Century Gothic", 14.25F);
             label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(496, 37);
+            label2.Location = new Point(496, 27);
             label2.Name = "label2";
-            label2.Size = new Size(52, 21);
+            label2.Size = new Size(59, 22);
             label2.TabIndex = 32;
             label2.Text = "Цена";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F);
+            label1.Font = new Font("Century Gothic", 14.25F);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(312, 37);
+            label1.Location = new Point(312, 27);
             label1.Name = "label1";
-            label1.Size = new Size(64, 21);
+            label1.Size = new Size(75, 22);
             label1.TabIndex = 31;
             label1.Text = "Статус";
             // 
             // Edit
             // 
+            Edit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Edit.BackColor = Color.FromArgb(40, 40, 40);
             Edit.FlatAppearance.BorderSize = 0;
             Edit.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             Edit.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             Edit.FlatStyle = FlatStyle.Flat;
-            Edit.Font = new Font("Century Gothic", 12F);
+            Edit.Font = new Font("Century Gothic", 14.25F);
             Edit.ForeColor = Color.LightGray;
-            Edit.Location = new Point(453, 614);
+            Edit.Location = new Point(460, 614);
             Edit.Name = "Edit";
-            Edit.Size = new Size(101, 30);
+            Edit.Size = new Size(123, 30);
             Edit.TabIndex = 30;
             Edit.Text = "Изменить";
             Edit.UseVisualStyleBackColor = false;
@@ -364,16 +351,17 @@
             // 
             // Delete
             // 
+            Delete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Delete.BackColor = Color.FromArgb(40, 40, 40);
             Delete.FlatAppearance.BorderSize = 0;
             Delete.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             Delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             Delete.FlatStyle = FlatStyle.Flat;
-            Delete.Font = new Font("Century Gothic", 12F);
+            Delete.Font = new Font("Century Gothic", 14.25F);
             Delete.ForeColor = Color.LightGray;
-            Delete.Location = new Point(579, 614);
+            Delete.Location = new Point(605, 614);
             Delete.Name = "Delete";
-            Delete.Size = new Size(101, 30);
+            Delete.Size = new Size(123, 30);
             Delete.TabIndex = 29;
             Delete.Text = "Удалить";
             Delete.UseVisualStyleBackColor = false;
@@ -381,16 +369,17 @@
             // 
             // Add
             // 
+            Add.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Add.BackColor = Color.FromArgb(40, 40, 40);
             Add.FlatAppearance.BorderSize = 0;
             Add.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             Add.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             Add.FlatStyle = FlatStyle.Flat;
-            Add.Font = new Font("Century Gothic", 12F);
+            Add.Font = new Font("Century Gothic", 14.25F);
             Add.ForeColor = Color.LightGray;
-            Add.Location = new Point(328, 614);
+            Add.Location = new Point(312, 614);
             Add.Name = "Add";
-            Add.Size = new Size(101, 30);
+            Add.Size = new Size(123, 30);
             Add.TabIndex = 28;
             Add.Text = "Добавить";
             Add.UseVisualStyleBackColor = false;
@@ -398,40 +387,83 @@
             // 
             // Seans
             // 
-            Seans.BorderStyle = BorderStyle.None;
+            Seans.BorderStyle = BorderStyle.FixedSingle;
             Seans.Cursor = Cursors.IBeam;
             Seans.Font = new Font("Century Gothic", 12F);
-            Seans.Location = new Point(820, 84);
+            Seans.ForeColor = Color.FromArgb(15, 15, 15);
+            Seans.Location = new Point(808, 84);
             Seans.Name = "Seans";
-            Seans.Size = new Size(140, 20);
+            Seans.Size = new Size(140, 27);
             Seans.TabIndex = 3;
             // 
             // Valid
             // 
+            Valid.Font = new Font("Century Gothic", 12F);
+            Valid.ForeColor = Color.FromArgb(15, 15, 15);
             Valid.FormattingEnabled = true;
-            Valid.Location = new Point(312, 84);
+            Valid.Location = new Point(312, 80);
             Valid.Name = "Valid";
-            Valid.Size = new Size(145, 20);
+            Valid.Size = new Size(145, 29);
             Valid.TabIndex = 0;
             // 
             // PriceLine
             // 
-            PriceLine.Location = new Point(496, 81);
-            PriceLine.Mask = "00000";
+            PriceLine.BorderStyle = BorderStyle.FixedSingle;
+            PriceLine.Font = new Font("Century Gothic", 12F);
+            PriceLine.ForeColor = Color.FromArgb(15, 15, 15);
+            PriceLine.Location = new Point(496, 82);
+            PriceLine.Mask = "00000руб";
             PriceLine.Name = "PriceLine";
-            PriceLine.Size = new Size(100, 23);
+            PriceLine.Size = new Size(100, 27);
             PriceLine.TabIndex = 1;
             PriceLine.ValidatingType = typeof(int);
             // 
             // SeatAdress
             // 
-            SeatAdress.BorderStyle = BorderStyle.None;
+            SeatAdress.BorderStyle = BorderStyle.FixedSingle;
             SeatAdress.Cursor = Cursors.IBeam;
             SeatAdress.Font = new Font("Century Gothic", 12F);
+            SeatAdress.ForeColor = Color.FromArgb(15, 15, 15);
             SeatAdress.Location = new Point(633, 84);
             SeatAdress.Name = "SeatAdress";
-            SeatAdress.Size = new Size(140, 20);
-            SeatAdress.TabIndex = 44;
+            SeatAdress.Size = new Size(140, 27);
+            SeatAdress.TabIndex = 2;
+            // 
+            // Print
+            // 
+            Print.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            Print.BackColor = Color.FromArgb(40, 40, 40);
+            Print.FlatAppearance.BorderSize = 0;
+            Print.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            Print.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            Print.FlatStyle = FlatStyle.Flat;
+            Print.Font = new Font("Century Gothic", 14.25F);
+            Print.ForeColor = Color.LightGray;
+            Print.Location = new Point(747, 614);
+            Print.Name = "Print";
+            Print.Size = new Size(119, 30);
+            Print.TabIndex = 44;
+            Print.Text = "Печать";
+            Print.UseVisualStyleBackColor = false;
+            Print.Click += Print_Click;
+            // 
+            // Poisk
+            // 
+            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            Poisk.BackColor = Color.FromArgb(40, 40, 40);
+            Poisk.FlatAppearance.BorderSize = 0;
+            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            Poisk.FlatStyle = FlatStyle.Flat;
+            Poisk.Font = new Font("Century Gothic", 14.25F);
+            Poisk.ForeColor = Color.LightGray;
+            Poisk.Location = new Point(885, 614);
+            Poisk.Name = "Poisk";
+            Poisk.Size = new Size(119, 30);
+            Poisk.TabIndex = 45;
+            Poisk.Text = "Поиск";
+            Poisk.UseVisualStyleBackColor = false;
+            Poisk.Click += Poisk_Click;
             // 
             // BiletForm
             // 
@@ -439,13 +471,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
+            Controls.Add(Poisk);
+            Controls.Add(Print);
             Controls.Add(SeatAdress);
             Controls.Add(PriceLine);
             Controls.Add(VnizBtn);
             Controls.Add(MaxBtn);
             Controls.Add(MinBtn);
             Controls.Add(CloseBtn);
-            Controls.Add(Save);
             Controls.Add(AllTicket);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -481,7 +514,6 @@
         private PictureBox MaxBtn;
         private PictureBox MinBtn;
         private PictureBox CloseBtn;
-        private Button Save;
         private DataGridView AllTicket;
         private Label label5;
         private Label label4;
@@ -502,5 +534,7 @@
         private PictureBox image1;
         private MaskedTextBox PriceLine;
         private TextBox SeatAdress;
+        private Button Print;
+        private Button Poisk;
     }
 }

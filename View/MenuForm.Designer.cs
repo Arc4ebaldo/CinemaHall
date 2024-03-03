@@ -31,7 +31,6 @@
             PanelBar = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
-            pictureBox5 = new PictureBox();
             FilmBtn = new Button();
             SeansBtn = new Button();
             ZalBtn = new Button();
@@ -41,7 +40,6 @@
             PanelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // PanelBar
@@ -52,7 +50,7 @@
             PanelBar.Dock = DockStyle.Top;
             PanelBar.Location = new Point(0, 0);
             PanelBar.Name = "PanelBar";
-            PanelBar.Size = new Size(900, 40);
+            PanelBar.Size = new Size(894, 40);
             PanelBar.TabIndex = 0;
             PanelBar.MouseMove += PanelBar_MouseMove;
             // 
@@ -60,7 +58,7 @@
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox3.Image = Properties.Resources.minus;
-            pictureBox3.Location = new Point(853, 3);
+            pictureBox3.Location = new Point(847, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(18, 18);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -72,24 +70,13 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.cross;
-            pictureBox1.Location = new Point(877, 3);
+            pictureBox1.Location = new Point(871, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Dock = DockStyle.Fill;
-            pictureBox5.Image = Properties.Resources.zal;
-            pictureBox5.Location = new Point(0, 40);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(900, 515);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 1;
-            pictureBox5.TabStop = false;
             // 
             // FilmBtn
             // 
@@ -187,14 +174,15 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(900, 555);
+            BackgroundImage = Properties.Resources.zal;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(894, 552);
             Controls.Add(TransBtn);
             Controls.Add(SotrudBtn);
             Controls.Add(BiletBtn);
             Controls.Add(ZalBtn);
             Controls.Add(SeansBtn);
             Controls.Add(FilmBtn);
-            Controls.Add(pictureBox5);
             Controls.Add(PanelBar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MenuForm";
@@ -203,7 +191,6 @@
             PanelBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -212,7 +199,6 @@
         private Panel PanelBar;
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox5;
         private Button FilmBtn;
         private Button SeansBtn;
         private Button ZalBtn;
