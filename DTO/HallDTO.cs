@@ -29,7 +29,14 @@ public class HallDTO
     public string? Name { get; set; }
 
     public Hall ToHall() {
+        if (Id is null) {
+            return new Hall(
+            Name,
+            int.Parse(Capacity)
+            );
+        }
         return new Hall(
+            int.Parse(Id),
             Name,
             int.Parse(Capacity)
             );

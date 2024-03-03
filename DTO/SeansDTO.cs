@@ -42,11 +42,20 @@ public class SeansDTO
 
     internal Seans ToSeans()
     {
-        return new Seans(
+        if (Id is null) {
+            return new Seans(
             DateTime.Parse(Duration),
             TimeSpan.Parse(Duration),
-            hallService.GetHallByName(HallName),
-            filmService.GetFilmByName(FilmName)
+            hallService.GetHallByName(HallName).ToHall(),
+            filmService.GetFilmByName(FilmName).ToFilm()
+        );
+        }
+        return new Seans(
+            int.Parse(Id),
+            DateTime.Parse(Duration),
+            TimeSpan.Parse(Duration),
+            hallService.GetHallByName(HallName).ToHall(),
+            filmService.GetFilmByName(FilmName).ToFilm()
         );
     }
 }

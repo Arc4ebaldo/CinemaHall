@@ -33,7 +33,15 @@ public class TransactionDTO
     }
 
     public Transaction ToTransaction() {
+        if (Id is null) {
+            return new Transaction(
+            System.DateTime.Parse(DateTime),
+            Type,
+            int.Parse(Amount)
+        );
+        }
         return new Transaction(
+            int.Parse(Id),
             System.DateTime.Parse(DateTime),
             Type,
             int.Parse(Amount)

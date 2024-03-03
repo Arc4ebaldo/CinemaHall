@@ -5,7 +5,6 @@ namespace test2.Repositories;
 public class HallRepo
 {
     private ApplicationContext context;
-
     public HallRepo()
     {
         this.context = new();
@@ -27,9 +26,11 @@ public class HallRepo
         return context.Halls.AsEnumerable();
     }
 
-    public void Update(Hall hall)
+    public void Update(Hall updatedHall)
     {
-        context.Halls.Update(hall);
+        Hall? hallToUpdate = context.Halls.Find(updatedHall.Id);
+        hallToUpdate.Name = updatedHall.Name;
+        hallToUpdate.Capasity = updatedHall.Capasity;
         context.SaveChanges();
     }
 

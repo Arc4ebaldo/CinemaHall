@@ -107,7 +107,6 @@ namespace test2.View
         private void Add_Click(object sender, EventArgs e)
         {
             TransactionDTO newTrans = new TransactionDTO(
-                TransID.Text,
                 DataTime.Text,
                 TipyTrans.Text,
                 Amount.Text
@@ -125,16 +124,19 @@ namespace test2.View
         private void Edit_Click(object sender, EventArgs e)
         {
             TransactionDTO newTrans = new TransactionDTO(
-                TransID.Text,
+                ID,
                 DataTime.Text,
                 TipyTrans.Text,
                 Amount.Text
                 );
+                transactionService.UpdateTransaction(newTrans);
+                AllTrans.DataSource = transactionService.GetAllTransactions();
         }
 
         private void AllTrans_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewSelectedCellCollection selectedCells = AllTrans.SelectedCells;
+            ID = selectedCells[0].Value.ToString();
             TransID.Text = selectedCells[0].Value.ToString();
             DataTime.Text = selectedCells[1].Value.ToString();
             TipyTrans.Text = selectedCells[2].Value.ToString();

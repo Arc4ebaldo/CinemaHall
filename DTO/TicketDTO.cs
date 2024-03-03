@@ -41,6 +41,14 @@ public class TicketDTO
 
     public Ticket ToTicket()
     {
+        if (Id is null) {
+            return new Ticket(
+            Valid.Equals("Действителен"),
+            int.Parse(Price),
+            SeatAdress,
+            seansRepo.GetById(int.Parse(SeansId))
+        );
+        }
         return new Ticket(
             int.Parse(Id),
             Valid.Equals("Действителен"),

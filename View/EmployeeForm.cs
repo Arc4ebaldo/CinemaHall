@@ -137,6 +137,7 @@ namespace test2.View
         {
             DataGridViewSelectedCellCollection selectedCells = AllEmployee.SelectedCells;
             ID = selectedCells[0].Value.ToString();
+            Console.WriteLine(ID);
             FirstName.Text = selectedCells[1].Value.ToString();
             LastName.Text = selectedCells[2].Value.ToString();
             Role.Text = selectedCells[3].Value.ToString();

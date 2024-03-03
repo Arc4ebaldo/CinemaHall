@@ -44,8 +44,8 @@ public class FilmService
         Repo.DeleteById(id);
     }
 
-    public Film GetFilmByName(string filmName)
+    public FilmDTO GetFilmByName(string filmName)
     {
-        return Repo.GetByName(filmName);
+        return new FilmDTO(Repo.GetByName(filmName));
     }
 }

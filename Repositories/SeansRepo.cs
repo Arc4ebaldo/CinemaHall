@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using test2.Models;
 
 namespace test2.Repositories;
@@ -5,7 +6,6 @@ namespace test2.Repositories;
 public class SeansRepo
 {
     private ApplicationContext context;
-
     public SeansRepo()
     {
         this.context = new();
@@ -24,13 +24,15 @@ public class SeansRepo
 
     public IEnumerable<Seans> GetAll()
     {
-        return context.Seanses.AsEnumerable();
+        return context.Seanses
+            .Include(s => s.Hall)
+            .Include(s => s.Film)
+            .AsEnumerable();
     }
 
     public void Update(Seans updatedSeans)
     {
-        context.Seanses.Update(updatedSeans);
-        context.SaveChanges();
+        throw new NotImplementedException();
     }
 
     public void DeleteById(int id)

@@ -12,7 +12,9 @@ public class Seans
     {
         StartDateTime = startDateTime;
         Duration = duration;
+        HallId = hall.Id;
         Hall = hall;
+        FilmId = film.Id;
         Film = film;
     }
 
@@ -21,7 +23,9 @@ public class Seans
         Id = id;
         StartDateTime = startDateTime;
         Duration = duration;
+        HallId = hall.Id;
         Hall = hall;
+        FilmId = film.Id;
         Film = film;
     }
 

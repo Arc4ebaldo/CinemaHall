@@ -9,11 +9,21 @@ public class TicketService {
 
     public TicketService()
     {
-        Repo = new();
+        this.Repo = new();
     }
 
     public void CreateTicket(TicketDTO newTicket) {
-        Repo.Create(newTicket.ToTicket());
+        using (var context = new ApplicationContext()) {
+            Seans? seans = context.Seanses.Find(int.Parse(newTicket.SeansId));
+            Ticket ticket = new Ticket(
+                newTicket.Valid.Equals("Действителен"),
+                int.Parse(newTicket.Price),
+                newTicket.SeatAdress,
+                seans
+            );
+            context.Tickets.Add(ticket);
+            context.SaveChanges();
+        }
     }
 
     public TicketDTO GetTicketById(int id) {

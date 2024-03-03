@@ -32,13 +32,23 @@ public class EmployeeDTO
         Role = role;
     }
 
-    internal Employee ToEmployee()
+    public Employee ToEmployee()
     {
-        return new Employee(
-            int.Parse(Id),
-            FirstName,
-            LastName,
-            Role
+        if (Id is null) {
+            return new Employee(
+                FirstName,
+                LastName,
+                Role
         );
+        }
+        else {
+            return new Employee(
+                int.Parse(Id),
+                FirstName,
+                LastName,
+                Role
+        );
+        }
     }
+
 }

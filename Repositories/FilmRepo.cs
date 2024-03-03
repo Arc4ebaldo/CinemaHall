@@ -4,10 +4,9 @@ namespace test2.Repositories;
 public class FilmRepo
 {
     private ApplicationContext context;
-
     public FilmRepo()
     {
-        this.context = new ApplicationContext();
+        this.context = new();
     }
 
     public void Create(Film newFilm)
@@ -28,7 +27,13 @@ public class FilmRepo
 
     public void Update(Film updatedFilm)
     {
-        context.Films.Update(updatedFilm);
+        Film? filmToUpdate = context.Films.Find(updatedFilm.Id);
+        filmToUpdate.Title = updatedFilm.Title;
+        filmToUpdate.Director = updatedFilm.Director;
+        filmToUpdate.Genre = updatedFilm.Genre;
+        filmToUpdate.Duration = updatedFilm.Duration;
+        filmToUpdate.ReleaseDate = updatedFilm.ReleaseDate;
+        filmToUpdate.Description = updatedFilm.Description;
         context.SaveChanges();
     }
 

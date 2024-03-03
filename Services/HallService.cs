@@ -6,12 +6,10 @@ namespace test2.Services;
 
 public class HallService
 {
-
     private HallRepo Repo;
-
     public HallService()
     {
-        this.Repo = new();
+        Repo = new();
     }
 
     public void CreateHall(HallDTO hall)
@@ -44,8 +42,8 @@ public class HallService
         Repo.DeleteById(id);
     }
 
-    public Hall GetHallByName(string hallName)
+    public HallDTO GetHallByName(string hallName)
     {
-        return Repo.GetByName(hallName);
+        return new HallDTO(Repo.GetByName(hallName));
     }
 }

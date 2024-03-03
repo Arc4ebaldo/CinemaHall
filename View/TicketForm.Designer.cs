@@ -54,7 +54,7 @@
             Delete = new Button();
             Add = new Button();
             Seans = new TextBox();
-            Valid = new TextBox();
+            Valid = new ComboBox();
             PriceLine = new MaskedTextBox();
             SeatAdress = new TextBox();
             panel1.SuspendLayout();
@@ -408,9 +408,7 @@
             // 
             // Valid
             // 
-            Valid.BorderStyle = BorderStyle.None;
-            Valid.Cursor = Cursors.IBeam;
-            Valid.Font = new Font("Century Gothic", 12F);
+            Valid.FormattingEnabled = true;
             Valid.Location = new Point(312, 84);
             Valid.Name = "Valid";
             Valid.Size = new Size(145, 20);
@@ -494,7 +492,7 @@
         private Button Delete;
         private Button Add;
         private TextBox Seans;
-        private TextBox Valid;
+        private ComboBox Valid;
         private Button TransBtn;
         private Button SotrudBtn;
         private Button BiletBtn;

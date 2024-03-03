@@ -22,6 +22,7 @@ public class Ticket
         Valid = valid;
         Price = price;
         SeatPosition = seatPosition;
+        SeansId = seans.Id;
         Seans = seans;
     }
 

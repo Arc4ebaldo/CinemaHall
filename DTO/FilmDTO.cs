@@ -44,7 +44,18 @@ public class FilmDTO
     }
 
     public Film ToFilm() {
+        if (Id is null) {
+            return new Film(
+            Title,
+            Genre,
+            Director,
+            TimeSpan.Parse(Duration),
+            DateOnly.Parse(ReleaseDate),
+            Description
+        );
+        }
         return new Film(
+            int.Parse(Id),
             Title,
             Genre,
             Director,

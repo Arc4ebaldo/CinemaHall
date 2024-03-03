@@ -26,6 +26,7 @@ namespace test2.View
         private void BiletForm_Load(object sender, EventArgs e)
         {
             AllTicket.DataSource = ticketService.GetAllTickets();
+            Valid.DataSource = new List<String>() {"Действителен", "Не действителен"};
         }
 
         private void CloseBtn_Click_1(object sender, EventArgs e)
@@ -129,6 +130,8 @@ namespace test2.View
                 SeatAdress.Text,
                 Seans.Text
                 );
+            ticketService.UpdateTicket(newTicket);
+            AllTicket.DataSource = ticketService.GetAllTickets();
         }
 
         private void AllTicket_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using test2.DTO;
+using test2.Models;
 using test2.Services;
 
 namespace test2.View

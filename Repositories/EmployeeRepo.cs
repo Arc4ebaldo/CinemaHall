@@ -36,12 +36,17 @@ public class EmployeeRepo
 
     public void Update(Employee updatedEmployee)
     {
-        context.Update(updatedEmployee);
+        Employee? employeeToUpdate = context.Employees.Find(updatedEmployee.Id);
+        employeeToUpdate.FirstName = updatedEmployee.FirstName;
+        employeeToUpdate.LastName = updatedEmployee.LastName;
+        employeeToUpdate.Role = updatedEmployee.Role;
+
         context.SaveChanges();
     }
 
     public void DeleteById(int id)
     {
         context.Employees.Remove(context.Employees.Find(id));
+        context.SaveChanges();
     }
 }
