@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using test2.DTO;
 using test2.Models;
 using test2.Repositories;
@@ -39,8 +40,16 @@ public class TicketService {
         return tickets;
     }
 
-    public void UpdateTicket(TicketDTO newTicket) {
-        Repo.Update(newTicket.ToTicket());
+    public void UpdateTicket(TicketDTO updatedTicket) {
+        using (var context = new ApplicationContext()) {
+            Seans? seans = context.Seanses.Find(int.Parse(updatedTicket.SeansId));
+            Ticket? ticketToUpdate = context.Tickets
+                .Find(int.Parse(updatedTicket.Id));
+            ticketToUpdate.Valid = updatedTicket.Valid.Equals("Действителен");
+            ticketToUpdate.Price = int.Parse(updatedTicket.Price);
+            ticketToUpdate.SeatPosition = updatedTicket.SeatAdress;
+            ticketToUpdate.Seans = seans;
+        }
     }
 
     public void DeleteTicketById(int id) {
