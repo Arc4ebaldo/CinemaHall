@@ -412,7 +412,7 @@
             PriceLine.Font = new Font("Century Gothic", 12F);
             PriceLine.ForeColor = Color.FromArgb(15, 15, 15);
             PriceLine.Location = new Point(496, 82);
-            PriceLine.Mask = "00000руб";
+            PriceLine.Mask = "00000";
             PriceLine.Name = "PriceLine";
             PriceLine.Size = new Size(100, 27);
             PriceLine.TabIndex = 1;

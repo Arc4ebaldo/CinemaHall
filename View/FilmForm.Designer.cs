@@ -48,7 +48,6 @@
             filmBindingSource = new BindingSource(components);
             AllFilms = new DataGridView();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             TransBtn = new Button();
             SotrudBtn = new Button();
             BiletBtn = new Button();
@@ -68,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)filmBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).BeginInit();
@@ -277,7 +275,6 @@
             // panel1
             // 
             panel1.BackColor = Color.Crimson;
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(TransBtn);
             panel1.Controls.Add(SotrudBtn);
             panel1.Controls.Add(BiletBtn);
@@ -290,17 +287,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(286, 661);
             panel1.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Khaki;
-            pictureBox1.Image = Properties.Resources.film_img;
-            pictureBox1.Location = new Point(30, 200);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(52, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
             // 
             // TransBtn
             // 
@@ -569,7 +555,6 @@
             ((System.ComponentModel.ISupportInitialize)filmBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)AllFilms).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)image1).EndInit();
             ((System.ComponentModel.ISupportInitialize)CloseBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinBtn).EndInit();
@@ -612,6 +597,5 @@
         private ComboBox Genre;
         private Button Print;
         private Button Poisk;
-        private PictureBox pictureBox1;
     }
 }
