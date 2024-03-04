@@ -26,6 +26,11 @@ namespace test2.View
 
         private void TransForm_Load(object sender, EventArgs e)
         {
+            AllTrans.AutoGenerateColumns = false;
+            AllTrans.Columns["IDPole"].DataPropertyName = "Id";
+            AllTrans.Columns["DataTimePole"].DataPropertyName = "DateTime";
+            AllTrans.Columns["TipTransPole"].DataPropertyName = "Type";
+            AllTrans.Columns["PricePole"].DataPropertyName = "Amount";
             AllTrans.DataSource = transactionService.GetAllTransactions();
             TipyTrans.DataSource = new List<string>() { "Наличка", "Перевод", "QR код", "Картой" };
         }
@@ -174,5 +179,9 @@ namespace test2.View
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
         }
 
+        private void FindBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

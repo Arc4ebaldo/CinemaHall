@@ -66,6 +66,12 @@ namespace test2.View
 
         private void BiletForm_MouseDown(object sender, MouseEventArgs e)
         {
+            AllTicket.AutoGenerateColumns = false;
+            AllTicket.Columns["IDPole"].DataPropertyName = "Id";
+            AllTicket.Columns["StatusPole"].DataPropertyName = "Valid";
+            AllTicket.Columns["PricePole"].DataPropertyName = "Price";
+            AllTicket.Columns["SeatPole"].DataPropertyName = "SeatAdress";
+            AllTicket.Columns["SeansPole"].DataPropertyName = "SeansId";
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
@@ -175,7 +181,7 @@ namespace test2.View
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
         }
 
-        private void Poisk_Click(object sender, EventArgs e)
+        private void FindBtn_Click(object sender, EventArgs e)
         {
 
         }

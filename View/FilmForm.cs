@@ -58,6 +58,14 @@ namespace test2
 
         private void FilmForm_Load(object sender, EventArgs e)
         {
+            AllFilms.AutoGenerateColumns = false;
+            AllFilms.Columns["IDPole"].DataPropertyName = "Id";
+            AllFilms.Columns["NamePole"].DataPropertyName = "Title";
+            AllFilms.Columns["DirectorPole"].DataPropertyName = "Director";
+            AllFilms.Columns["GenrePole"].DataPropertyName = "Genre";
+            AllFilms.Columns["DurationPole"].DataPropertyName = "Duration";
+            AllFilms.Columns["DataPole"].DataPropertyName = "ReleaseDate";
+            AllFilms.Columns["DescriptionPole"].DataPropertyName = "Description";
             AllFilms.DataSource = filmService.GetAllFilms();
             Genre.DataSource = new List<string>() { "Боевик", "Комедия", "Ужасы", "Триллер", "Фантастика", "Драма", "Мультфильм" };
         }
@@ -179,6 +187,36 @@ namespace test2
         void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        private void FindBtn_Click(object sender, EventArgs e)
+        {
+            List<FilmDTO> list = filmService.GetAllFilms();
+            if (Title.Text.Length > 0)
+            {
+                foreach (var i in list)
+                {
+                    if (i.Title == Title.Text)
+                    {
+                        AllFilms.DataSource = new List<FilmDTO>() { i };
+                        return;
+                    }
+                }
+            }
+            if (Director.Text.Length > 0)
+            {
+                List<FilmDTO> returnList = new List<FilmDTO>();
+                foreach (var i in list)
+                {
+                    if (i.Director == Director.Text)
+                    {
+                        returnList.Add(i);
+                    }
+                }
+                AllFilms.DataSource = returnList;
+                return;
+            }
+
         }
     }
 }

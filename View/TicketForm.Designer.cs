@@ -57,7 +57,12 @@
             PriceLine = new MaskedTextBox();
             SeatAdress = new TextBox();
             Print = new Button();
-            Poisk = new Button();
+            FindBtn = new Button();
+            IDPole = new DataGridViewTextBoxColumn();
+            StatusPole = new DataGridViewTextBoxColumn();
+            PricePole = new DataGridViewTextBoxColumn();
+            PlasePole = new DataGridViewTextBoxColumn();
+            SeansPole = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
@@ -263,6 +268,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllTicket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllTicket.Columns.AddRange(new DataGridViewColumn[] { IDPole, StatusPole, PricePole, PlasePole, SeansPole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -447,23 +453,56 @@
             Print.UseVisualStyleBackColor = false;
             Print.Click += Print_Click;
             // 
-            // Poisk
+            // FindBtn
             // 
-            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            Poisk.BackColor = Color.FromArgb(40, 40, 40);
-            Poisk.FlatAppearance.BorderSize = 0;
-            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Poisk.FlatStyle = FlatStyle.Flat;
-            Poisk.Font = new Font("Century Gothic", 14.25F);
-            Poisk.ForeColor = Color.LightGray;
-            Poisk.Location = new Point(885, 614);
-            Poisk.Name = "Poisk";
-            Poisk.Size = new Size(119, 30);
-            Poisk.TabIndex = 45;
-            Poisk.Text = "Поиск";
-            Poisk.UseVisualStyleBackColor = false;
-            Poisk.Click += Poisk_Click;
+            FindBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindBtn.BackColor = Color.FromArgb(40, 40, 40);
+            FindBtn.FlatAppearance.BorderSize = 0;
+            FindBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            FindBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            FindBtn.FlatStyle = FlatStyle.Flat;
+            FindBtn.Font = new Font("Century Gothic", 14.25F);
+            FindBtn.ForeColor = Color.LightGray;
+            FindBtn.Location = new Point(885, 614);
+            FindBtn.Name = "FindBtn";
+            FindBtn.Size = new Size(119, 30);
+            FindBtn.TabIndex = 45;
+            FindBtn.Text = "Поиск";
+            FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // StatusPole
+            // 
+            StatusPole.HeaderText = "Статус";
+            StatusPole.Name = "StatusPole";
+            StatusPole.ReadOnly = true;
+            StatusPole.Width = 150;
+            // 
+            // PricePole
+            // 
+            PricePole.HeaderText = "Цена";
+            PricePole.Name = "PricePole";
+            PricePole.ReadOnly = true;
+            // 
+            // PlasePole
+            // 
+            PlasePole.HeaderText = "Место";
+            PlasePole.Name = "PlasePole";
+            PlasePole.ReadOnly = true;
+            // 
+            // SeansPole
+            // 
+            SeansPole.HeaderText = "Сеанс";
+            SeansPole.Name = "SeansPole";
+            SeansPole.ReadOnly = true;
+            SeansPole.Width = 150;
             // 
             // BiletForm
             // 
@@ -471,7 +510,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Poisk);
+            Controls.Add(FindBtn);
             Controls.Add(Print);
             Controls.Add(SeatAdress);
             Controls.Add(PriceLine);
@@ -535,6 +574,11 @@
         private MaskedTextBox PriceLine;
         private TextBox SeatAdress;
         private Button Print;
-        private Button Poisk;
+        private Button FindBtn;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn StatusPole;
+        private DataGridViewTextBoxColumn PricePole;
+        private DataGridViewTextBoxColumn PlasePole;
+        private DataGridViewTextBoxColumn SeansPole;
     }
 }

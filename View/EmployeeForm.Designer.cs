@@ -55,7 +55,11 @@
             LastName = new TextBox();
             FirstName = new TextBox();
             Print = new Button();
-            Poisk = new Button();
+            FindBtn = new Button();
+            IDPole = new DataGridViewTextBoxColumn();
+            FirstNamePole = new DataGridViewTextBoxColumn();
+            LastNamePole = new DataGridViewTextBoxColumn();
+            RolePole = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
@@ -270,6 +274,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllEmployee.Columns.AddRange(new DataGridViewColumn[] { IDPole, FirstNamePole, LastNamePole, RolePole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -419,22 +424,49 @@
             Print.UseVisualStyleBackColor = false;
             Print.Click += Print_Click;
             // 
-            // Poisk
+            // FindBtn
             // 
-            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            Poisk.BackColor = Color.FromArgb(40, 40, 40);
-            Poisk.FlatAppearance.BorderSize = 0;
-            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Poisk.FlatStyle = FlatStyle.Flat;
-            Poisk.Font = new Font("Century Gothic", 14.25F);
-            Poisk.ForeColor = Color.LightGray;
-            Poisk.Location = new Point(914, 614);
-            Poisk.Name = "Poisk";
-            Poisk.Size = new Size(152, 30);
-            Poisk.TabIndex = 63;
-            Poisk.Text = "Поиск";
-            Poisk.UseVisualStyleBackColor = false;
+            FindBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindBtn.BackColor = Color.FromArgb(40, 40, 40);
+            FindBtn.FlatAppearance.BorderSize = 0;
+            FindBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            FindBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            FindBtn.FlatStyle = FlatStyle.Flat;
+            FindBtn.Font = new Font("Century Gothic", 14.25F);
+            FindBtn.ForeColor = Color.LightGray;
+            FindBtn.Location = new Point(914, 614);
+            FindBtn.Name = "FindBtn";
+            FindBtn.Size = new Size(152, 30);
+            FindBtn.TabIndex = 63;
+            FindBtn.Text = "Поиск";
+            FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // FirstNamePole
+            // 
+            FirstNamePole.HeaderText = "Имя";
+            FirstNamePole.Name = "FirstNamePole";
+            FirstNamePole.ReadOnly = true;
+            // 
+            // LastNamePole
+            // 
+            LastNamePole.HeaderText = "Фамилия";
+            LastNamePole.Name = "LastNamePole";
+            LastNamePole.ReadOnly = true;
+            // 
+            // RolePole
+            // 
+            RolePole.HeaderText = "Должность";
+            RolePole.Name = "RolePole";
+            RolePole.ReadOnly = true;
+            RolePole.Width = 150;
             // 
             // SotrudForm
             // 
@@ -442,7 +474,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Poisk);
+            Controls.Add(FindBtn);
             Controls.Add(Print);
             Controls.Add(Role);
             Controls.Add(VnizBtn);
@@ -500,6 +532,10 @@
         private Button MovieBtn;
         private PictureBox image1;
         private Button Print;
-        private Button Poisk;
+        private Button FindBtn;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn FirstNamePole;
+        private DataGridViewTextBoxColumn LastNamePole;
+        private DataGridViewTextBoxColumn RolePole;
     }
 }

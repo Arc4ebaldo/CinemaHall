@@ -63,7 +63,14 @@
             Duration = new MaskedTextBox();
             Genre = new ComboBox();
             Print = new Button();
-            Poisk = new Button();
+            FindBtn = new Button();
+            IDPole = new DataGridViewTextBoxColumn();
+            NamePole = new DataGridViewTextBoxColumn();
+            DirectorPole = new DataGridViewTextBoxColumn();
+            GenrePole = new DataGridViewTextBoxColumn();
+            DurationPole = new DataGridViewTextBoxColumn();
+            DataPole = new DataGridViewTextBoxColumn();
+            DescriptionPole = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)filmBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AllFilms).BeginInit();
             panel1.SuspendLayout();
@@ -248,6 +255,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllFilms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllFilms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllFilms.Columns.AddRange(new DataGridViewColumn[] { IDPole, NamePole, DirectorPole, GenrePole, DurationPole, DataPole, DescriptionPole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -501,22 +509,68 @@
             Print.UseVisualStyleBackColor = false;
             Print.Click += Print_Click;
             // 
-            // Poisk
+            // FindBtn
             // 
-            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            Poisk.BackColor = Color.FromArgb(40, 40, 40);
-            Poisk.FlatAppearance.BorderSize = 0;
-            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Poisk.FlatStyle = FlatStyle.Flat;
-            Poisk.Font = new Font("Century Gothic", 14.25F);
-            Poisk.ForeColor = Color.LightGray;
-            Poisk.Location = new Point(840, 608);
-            Poisk.Name = "Poisk";
-            Poisk.Size = new Size(119, 30);
-            Poisk.TabIndex = 46;
-            Poisk.Text = "Поиск";
-            Poisk.UseVisualStyleBackColor = false;
+            FindBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindBtn.BackColor = Color.FromArgb(40, 40, 40);
+            FindBtn.FlatAppearance.BorderSize = 0;
+            FindBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            FindBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            FindBtn.FlatStyle = FlatStyle.Flat;
+            FindBtn.Font = new Font("Century Gothic", 14.25F);
+            FindBtn.ForeColor = Color.LightGray;
+            FindBtn.Location = new Point(840, 608);
+            FindBtn.Name = "FindBtn";
+            FindBtn.Size = new Size(119, 30);
+            FindBtn.TabIndex = 46;
+            FindBtn.Text = "Поиск";
+            FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // NamePole
+            // 
+            NamePole.HeaderText = "Название";
+            NamePole.Name = "NamePole";
+            NamePole.ReadOnly = true;
+            // 
+            // DirectorPole
+            // 
+            DirectorPole.HeaderText = "Режиссер";
+            DirectorPole.Name = "DirectorPole";
+            DirectorPole.ReadOnly = true;
+            // 
+            // GenrePole
+            // 
+            GenrePole.HeaderText = "Жанр";
+            GenrePole.Name = "GenrePole";
+            GenrePole.ReadOnly = true;
+            // 
+            // DurationPole
+            // 
+            DurationPole.HeaderText = "Продолжительность";
+            DurationPole.Name = "DurationPole";
+            DurationPole.ReadOnly = true;
+            DurationPole.Width = 200;
+            // 
+            // DataPole
+            // 
+            DataPole.HeaderText = "Год выпуска";
+            DataPole.Name = "DataPole";
+            DataPole.ReadOnly = true;
+            // 
+            // DescriptionPole
+            // 
+            DescriptionPole.HeaderText = "Описание";
+            DescriptionPole.Name = "DescriptionPole";
+            DescriptionPole.ReadOnly = true;
+            DescriptionPole.Width = 200;
             // 
             // FilmForm
             // 
@@ -524,7 +578,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Poisk);
+            Controls.Add(FindBtn);
             Controls.Add(Print);
             Controls.Add(Genre);
             Controls.Add(Duration);
@@ -596,6 +650,13 @@
         private MaskedTextBox Duration;
         private ComboBox Genre;
         private Button Print;
-        private Button Poisk;
+        private Button FindBtn;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn NamePole;
+        private DataGridViewTextBoxColumn DirectorPole;
+        private DataGridViewTextBoxColumn GenrePole;
+        private DataGridViewTextBoxColumn DurationPole;
+        private DataGridViewTextBoxColumn DataPole;
+        private DataGridViewTextBoxColumn DescriptionPole;
     }
 }

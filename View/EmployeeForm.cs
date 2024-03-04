@@ -26,6 +26,11 @@ namespace test2.View
 
         private void SotrudForm_Load(object sender, EventArgs e)
         {
+            AllEmployee.AutoGenerateColumns = false;
+            AllEmployee.Columns["IDPole"].DataPropertyName = "Id";
+            AllEmployee.Columns["FirstNamePole"].DataPropertyName = "FirstName";
+            AllEmployee.Columns["LastNamePole"].DataPropertyName = "LastName";
+            AllEmployee.Columns["RolePole"].DataPropertyName = "Role";
             AllEmployee.DataSource = EmployeeService.GetAllEmployees();
             Role.DataSource = new List<string>() { "Администратор", "Кассир", "Продавец", "Бухгалтер", "Охранник", "Киномеханик", "Уборщик" };
         }
@@ -172,6 +177,11 @@ namespace test2.View
         void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        private void FindBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

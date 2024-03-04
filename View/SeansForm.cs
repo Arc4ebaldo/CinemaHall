@@ -30,13 +30,22 @@ namespace test2.View
 
         private void SeansForm_Load(object sender, EventArgs e)
         {
+            AllSeans.AutoGenerateColumns = false;
             AllSeans.DataSource = seansService.GetAllSeanses();
+            AllSeans.Columns["IDPole"].DataPropertyName = "Id";
+            AllSeans.Columns["DataTimePole"].DataPropertyName = "StartDatetime";
+            AllSeans.Columns["NamePole"].DataPropertyName = "FilmName";
+            AllSeans.Columns["HallPole"].DataPropertyName = "HallName";
+            AllSeans.Columns["DurationPole"].DataPropertyName = "Duration";
+
             List<string> hallNames = new();
             foreach (HallDTO name in hallService.GetAllHalls())
             {
                 hallNames.Add(name.Name);
             }
             HallList.DataSource = hallNames;
+
+
         }
 
         private void MovieBtn_Click(object sender, EventArgs e)
@@ -189,17 +198,9 @@ namespace test2.View
             FilmTitle.Text = selectedCells[4].Value.ToString();
         }
 
-        private void Poisk_Click(object sender, EventArgs e)
+        private void FindBtn_Click(object sender, EventArgs e)
         {
-            SeansDTO curFields = new SeansDTO(
-                   ID,
-                   StartDateTime.Text,
-                   Duration.Text,
-                   HallList.Text,
-                   FilmTitle.Text
-           );
-            List<SeansDTO>allSeanses = seansService.GetAllSeanses();
-        }
 
+        }
     }
 }

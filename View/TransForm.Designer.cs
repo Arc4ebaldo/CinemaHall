@@ -57,7 +57,11 @@
             label4 = new Label();
             Amount = new MaskedTextBox();
             TransID = new MaskedTextBox();
-            button1 = new Button();
+            FindBtn = new Button();
+            IDPole = new DataGridViewTextBoxColumn();
+            DataTimePole = new DataGridViewTextBoxColumn();
+            TipTransPole = new DataGridViewTextBoxColumn();
+            PricePole = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
@@ -304,6 +308,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllTrans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllTrans.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllTrans.Columns.AddRange(new DataGridViewColumn[] { IDPole, DataTimePole, TipTransPole, PricePole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -450,22 +455,49 @@
             TransID.TabIndex = 0;
             TransID.ValidatingType = typeof(int);
             // 
-            // button1
+            // FindBtn
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.BackColor = Color.FromArgb(40, 40, 40);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14.25F);
-            button1.ForeColor = Color.LightGray;
-            button1.Location = new Point(857, 612);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 30);
-            button1.TabIndex = 47;
-            button1.Text = "Поиск";
-            button1.UseVisualStyleBackColor = false;
+            FindBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindBtn.BackColor = Color.FromArgb(40, 40, 40);
+            FindBtn.FlatAppearance.BorderSize = 0;
+            FindBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            FindBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            FindBtn.FlatStyle = FlatStyle.Flat;
+            FindBtn.Font = new Font("Century Gothic", 14.25F);
+            FindBtn.ForeColor = Color.LightGray;
+            FindBtn.Location = new Point(857, 612);
+            FindBtn.Name = "FindBtn";
+            FindBtn.Size = new Size(135, 30);
+            FindBtn.TabIndex = 47;
+            FindBtn.Text = "Поиск";
+            FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "Номер транзакции";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Width = 150;
+            // 
+            // DataTimePole
+            // 
+            DataTimePole.HeaderText = "Дата и время";
+            DataTimePole.Name = "DataTimePole";
+            DataTimePole.ReadOnly = true;
+            // 
+            // TipTransPole
+            // 
+            TipTransPole.HeaderText = "Тип транзакции";
+            TipTransPole.Name = "TipTransPole";
+            TipTransPole.ReadOnly = true;
+            TipTransPole.Width = 150;
+            // 
+            // PricePole
+            // 
+            PricePole.HeaderText = "Сумма";
+            PricePole.Name = "PricePole";
+            PricePole.ReadOnly = true;
             // 
             // TransForm
             // 
@@ -473,7 +505,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(button1);
+            Controls.Add(FindBtn);
             Controls.Add(TransID);
             Controls.Add(Amount);
             Controls.Add(label4);
@@ -535,6 +567,10 @@
         private Label label4;
         private MaskedTextBox Amount;
         private MaskedTextBox TransID;
-        private Button button1;
+        private Button FindBtn;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn DataTimePole;
+        private DataGridViewTextBoxColumn TipTransPole;
+        private DataGridViewTextBoxColumn PricePole;
     }
 }

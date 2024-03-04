@@ -53,7 +53,10 @@
             label2 = new Label();
             HallName = new TextBox();
             Capasity = new MaskedTextBox();
-            Poisk = new Button();
+            FindBtn = new Button();
+            IDPole = new DataGridViewTextBoxColumn();
+            NamePole = new DataGridViewTextBoxColumn();
+            CapasityPole = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
@@ -278,6 +281,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllHall.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllHall.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllHall.Columns.AddRange(new DataGridViewColumn[] { IDPole, NamePole, CapasityPole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -399,22 +403,44 @@
             Capasity.TabIndex = 61;
             Capasity.ValidatingType = typeof(int);
             // 
-            // Poisk
+            // FindBtn
             // 
-            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            Poisk.BackColor = Color.FromArgb(40, 40, 40);
-            Poisk.FlatAppearance.BorderSize = 0;
-            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Poisk.FlatStyle = FlatStyle.Flat;
-            Poisk.Font = new Font("Century Gothic", 14.25F);
-            Poisk.ForeColor = Color.LightGray;
-            Poisk.Location = new Point(880, 614);
-            Poisk.Name = "Poisk";
-            Poisk.Size = new Size(128, 30);
-            Poisk.TabIndex = 62;
-            Poisk.Text = "Поиск";
-            Poisk.UseVisualStyleBackColor = false;
+            FindBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindBtn.BackColor = Color.FromArgb(40, 40, 40);
+            FindBtn.FlatAppearance.BorderSize = 0;
+            FindBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            FindBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            FindBtn.FlatStyle = FlatStyle.Flat;
+            FindBtn.Font = new Font("Century Gothic", 14.25F);
+            FindBtn.ForeColor = Color.LightGray;
+            FindBtn.Location = new Point(880, 614);
+            FindBtn.Name = "FindBtn";
+            FindBtn.Size = new Size(128, 30);
+            FindBtn.TabIndex = 62;
+            FindBtn.Text = "Поиск";
+            FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // NamePole
+            // 
+            NamePole.HeaderText = "Название";
+            NamePole.Name = "NamePole";
+            NamePole.ReadOnly = true;
+            NamePole.Width = 150;
+            // 
+            // CapasityPole
+            // 
+            CapasityPole.HeaderText = "Вместимость";
+            CapasityPole.Name = "CapasityPole";
+            CapasityPole.ReadOnly = true;
+            CapasityPole.Width = 150;
             // 
             // ZalForm
             // 
@@ -422,7 +448,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Poisk);
+            Controls.Add(FindBtn);
             Controls.Add(Capasity);
             Controls.Add(HallName);
             Controls.Add(VnizBtn);
@@ -476,6 +502,9 @@
         private Button ZalBtn;
         private TextBox HallName;
         private MaskedTextBox Capasity;
-        private Button Poisk;
+        private Button FindBtn;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn NamePole;
+        private DataGridViewTextBoxColumn CapasityPole;
     }
 }

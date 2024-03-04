@@ -59,8 +59,13 @@
             StartDateTime = new MaskedTextBox();
             HallList = new ComboBox();
             filmBindingSource = new BindingSource(components);
-            Poisk = new Button();
+            FindBtn = new Button();
             sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
+            IDPole = new DataGridViewTextBoxColumn();
+            DataTimePole = new DataGridViewTextBoxColumn();
+            NamePole = new DataGridViewTextBoxColumn();
+            HallPole = new DataGridViewTextBoxColumn();
+            DurationPole = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)image1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VnizBtn).BeginInit();
@@ -296,6 +301,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllSeans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllSeans.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllSeans.Columns.AddRange(new DataGridViewColumn[] { IDPole, DataTimePole, NamePole, HallPole, DurationPole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -452,23 +458,23 @@
             // 
             filmBindingSource.DataSource = typeof(Models.Film);
             // 
-            // Poisk
+            // FindBtn
             // 
-            Poisk.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            Poisk.BackColor = Color.FromArgb(40, 40, 40);
-            Poisk.FlatAppearance.BorderSize = 0;
-            Poisk.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            Poisk.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            Poisk.FlatStyle = FlatStyle.Flat;
-            Poisk.Font = new Font("Century Gothic", 14.25F);
-            Poisk.ForeColor = Color.LightGray;
-            Poisk.Location = new Point(810, 610);
-            Poisk.Name = "Poisk";
-            Poisk.Size = new Size(119, 30);
-            Poisk.TabIndex = 44;
-            Poisk.Text = "Поиск";
-            Poisk.UseVisualStyleBackColor = false;
-            Poisk.Click += Poisk_Click;
+            FindBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindBtn.BackColor = Color.FromArgb(40, 40, 40);
+            FindBtn.FlatAppearance.BorderSize = 0;
+            FindBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            FindBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            FindBtn.FlatStyle = FlatStyle.Flat;
+            FindBtn.Font = new Font("Century Gothic", 14.25F);
+            FindBtn.ForeColor = Color.LightGray;
+            FindBtn.Location = new Point(810, 610);
+            FindBtn.Name = "FindBtn";
+            FindBtn.Size = new Size(119, 30);
+            FindBtn.TabIndex = 44;
+            FindBtn.Text = "Поиск";
+            FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
             // 
             // sqliteCommand1
             // 
@@ -477,13 +483,46 @@
             sqliteCommand1.Transaction = null;
             sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // DataTimePole
+            // 
+            DataTimePole.HeaderText = "Дата и время начала";
+            DataTimePole.Name = "DataTimePole";
+            DataTimePole.ReadOnly = true;
+            DataTimePole.Width = 150;
+            // 
+            // NamePole
+            // 
+            NamePole.HeaderText = "Название";
+            NamePole.Name = "NamePole";
+            NamePole.ReadOnly = true;
+            // 
+            // HallPole
+            // 
+            HallPole.HeaderText = "Зал";
+            HallPole.Name = "HallPole";
+            HallPole.ReadOnly = true;
+            // 
+            // DurationPole
+            // 
+            DurationPole.HeaderText = "Продолжительность";
+            DurationPole.Name = "DurationPole";
+            DurationPole.ReadOnly = true;
+            DurationPole.Width = 200;
+            // 
             // SeansForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(1364, 661);
-            Controls.Add(Poisk);
+            Controls.Add(FindBtn);
             Controls.Add(HallList);
             Controls.Add(StartDateTime);
             Controls.Add(Duration);
@@ -547,7 +586,12 @@
         private MaskedTextBox StartDateTime;
         private ComboBox HallList;
         private BindingSource filmBindingSource;
-        private Button Poisk;
+        private Button FindBtn;
         private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn DataTimePole;
+        private DataGridViewTextBoxColumn NamePole;
+        private DataGridViewTextBoxColumn HallPole;
+        private DataGridViewTextBoxColumn DurationPole;
     }
 }
