@@ -47,8 +47,8 @@ public class FilmDTO
         if (Id is null) {
             return new Film(
             Title,
-            Genre,
             Director,
+            Genre,
             TimeSpan.Parse(Duration),
             DateOnly.Parse(ReleaseDate),
             Description
