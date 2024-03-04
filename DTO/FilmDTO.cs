@@ -57,8 +57,8 @@ public class FilmDTO
         return new Film(
             int.Parse(Id),
             Title,
-            Genre,
             Director,
+            Genre,
             TimeSpan.Parse(Duration),
             DateOnly.Parse(ReleaseDate),
             Description
